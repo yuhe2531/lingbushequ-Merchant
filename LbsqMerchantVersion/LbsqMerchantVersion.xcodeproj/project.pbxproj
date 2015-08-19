@@ -77,6 +77,7 @@
 		3FED752F1B8432A800DD53B9 /* OrderStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FED752E1B8432A800DD53B9 /* OrderStatisticsViewController.m */; };
 		3FED75321B844E0000DD53B9 /* OrderStatisticsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FED75311B844E0000DD53B9 /* OrderStatisticsTableViewCell.m */; };
 		3FED75351B8451AF00DD53B9 /* ScrollHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FED75341B8451AF00DD53B9 /* ScrollHeaderView.m */; };
+		3FF3146E1B847512004C620B /* GoodsManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3146D1B847512004C620B /* GoodsManagementViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -234,6 +235,8 @@
 		3FED75311B844E0000DD53B9 /* OrderStatisticsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderStatisticsTableViewCell.m; sourceTree = "<group>"; };
 		3FED75331B8451AF00DD53B9 /* ScrollHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollHeaderView.h; sourceTree = "<group>"; };
 		3FED75341B8451AF00DD53B9 /* ScrollHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollHeaderView.m; sourceTree = "<group>"; };
+		3FF3146C1B847512004C620B /* GoodsManagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsManagementViewController.h; sourceTree = "<group>"; };
+		3FF3146D1B847512004C620B /* GoodsManagementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsManagementViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +289,7 @@
 		3FA0BE481B82B8E700FD42A0 /* LbsqMerchantVersion */ = {
 			isa = PBXGroup;
 			children = (
+				3FF3146B1B8474EC004C620B /* GoodsManagement */,
 				3FA0BF171B830DC100FD42A0 /* Mine */,
 				3FA0BF161B830DB700FD42A0 /* Home */,
 				3FA0BF091B830C6100FD42A0 /* MainControllers */,
@@ -548,6 +552,15 @@
 			name = OrderStatistics;
 			sourceTree = "<group>";
 		};
+		3FF3146B1B8474EC004C620B /* GoodsManagement */ = {
+			isa = PBXGroup;
+			children = (
+				3FF3146C1B847512004C620B /* GoodsManagementViewController.h */,
+				3FF3146D1B847512004C620B /* GoodsManagementViewController.m */,
+			);
+			name = GoodsManagement;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -651,6 +664,7 @@
 			files = (
 				3FA0BF051B83010F00FD42A0 /* UIProgressView+AFNetworking.m in Sources */,
 				3FA0BF151B830D1700FD42A0 /* MineNavViewController.m in Sources */,
+				3FF3146E1B847512004C620B /* GoodsManagementViewController.m in Sources */,
 				3FA0BEA31B8300AC00FD42A0 /* UIImageView+HighlightedWebCache.m in Sources */,
 				3FA0BF061B83010F00FD42A0 /* UIRefreshControl+AFNetworking.m in Sources */,
 				3FA0BF231B83153E00FD42A0 /* TabBarItem.m in Sources */,

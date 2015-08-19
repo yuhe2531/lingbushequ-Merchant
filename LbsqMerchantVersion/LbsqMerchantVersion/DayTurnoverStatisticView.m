@@ -22,7 +22,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor lightGrayColor];
+        UIImageView *superImage = [[UIImageView alloc] initWithFrame:self.bounds];
+        superImage.backgroundColor = KRandomColor;
+        [self addSubview:superImage];
         [self createDayTurnOverStatisticsSubviews];
     }
     return self;
@@ -32,8 +34,10 @@
 #define KMargin_horizon 100
 
 #define KTitleL_height 40
-#define KTitleL_bottom_margin 10
+#define KTitleL_bottom_margin 0
 #define KCountTitleL_height 20
+
+#define kCountL_height 30
 
 -(void)createDayTurnOverStatisticsSubviews
 {
@@ -41,20 +45,24 @@
     view.backgroundColor = [UIColor whiteColor];
     [self addSubview:view];
     
-    UILabel *titleL = [ControlExtension labelInitWithFrame:CGRectMake(0, 0, view.width, KTitleL_height) title:@"今日营业额统计" font:kFontSize_2 textAlignment:NSTextAlignmentCenter];
+    UILabel *titleL = [ControlExtension labelInitWithFrame:CGRectMake(50, 0, view.width, KTitleL_height) title:@"今日营业额统计" font:kFontSize_2 textAlignment:NSTextAlignmentLeft];
     titleL.textColor = [UIColor redColor];
     [view addSubview:titleL];
+    
+    UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(15, 10, 20, 20)];
+    imageV.backgroundColor = KRandomColor;
+    [view addSubview:imageV];   
     
     for (int i = 0; i < 2; i++) {
         UILabel *countTitleL = [ControlExtension labelInitWithFrame:CGRectMake(view.width/2*i, titleL.bottom+KTitleL_bottom_margin, view.width/2, KCountTitleL_height) title:@"订单数" font:kFontSize_3 textAlignment:NSTextAlignmentCenter];
         [view addSubview:countTitleL];
     }
     
-    _countLabel = [ControlExtension labelInitWithFrame:CGRectMake(0, titleL.bottom+KTitleL_bottom_margin+KCountTitleL_height, view.width/2, KCountTitleL_height) title:@"0" font:kFontSize_3 textAlignment:NSTextAlignmentCenter];
+    _countLabel = [ControlExtension labelInitWithFrame:CGRectMake(0, titleL.bottom+KTitleL_bottom_margin+KCountTitleL_height, view.width/2, kCountL_height) title:@"0" font:23 textAlignment:NSTextAlignmentCenter];
     _countLabel.textColor = [UIColor orangeColor];
     [view addSubview:_countLabel];
     
-    _sumLabel = [ControlExtension labelInitWithFrame:CGRectMake(_countLabel.right, _countLabel.top, _countLabel.width, _countLabel.height) title:@"0" font:kFontSize_3 textAlignment:NSTextAlignmentCenter];
+    _sumLabel = [ControlExtension labelInitWithFrame:CGRectMake(_countLabel.right, _countLabel.top, _countLabel.width, _countLabel.height) title:@"0" font:23 textAlignment:NSTextAlignmentCenter];
     _sumLabel.textColor = [UIColor orangeColor];
     [view addSubview:_sumLabel];
     

@@ -10,6 +10,7 @@
 #import "DayTurnoverStatisticView.h"
 #import "HomeBtnView.h"
 #import "OrderStatisticsViewController.h"
+#import "GoodsManagementViewController.h"
 
 @interface HomeViewController ()
 
@@ -85,7 +86,8 @@
             break;
         }
         case 202:{//商品管理
-            
+            GoodsManagementViewController *managementVC = [[GoodsManagementViewController alloc] init];
+            [self.navigationController pushViewController:managementVC animated:YES];
             
             break;
         }

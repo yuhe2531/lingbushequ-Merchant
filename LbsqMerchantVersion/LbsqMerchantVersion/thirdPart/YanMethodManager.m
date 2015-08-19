@@ -408,7 +408,7 @@ static YanMethodManager *manager = nil;
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 30)];
     titleLabel.text = title;
     titleLabel.font = [UIFont systemFontOfSize:kFontSize_1];
-    titleLabel.textColor = [UIColor blackColor];
+    titleLabel.textColor = [UIColor whiteColor];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     return titleLabel;
 }
