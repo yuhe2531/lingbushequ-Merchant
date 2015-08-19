@@ -28,10 +28,14 @@
     searchTF.layer.borderWidth = 0.5;
     searchTF.layer.cornerRadius = 5;
     searchTF.placeholder = @"请输入商品名称";
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, searchTF.height, searchTF.height)];
     UIImageView *leftImageV = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, 20, 20)];
     leftImageV.backgroundColor = KRandomColor;
+    leftImageV.center = CGPointMake(view.width/2, view.height/2);
+    [view addSubview:leftImageV];
     searchTF.leftViewMode = UITextFieldViewModeAlways;
-    searchTF.leftView = leftImageV;
+    searchTF.leftView = view;
     [self addSubview:searchTF];
     
     UIButton *searchBtn = [UIButton buttonWithType:UIButtonTypeSystem];

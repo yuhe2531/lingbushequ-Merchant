@@ -10,6 +10,9 @@
 #import "TabbarViewController.h"
 #import "SearchView.h"
 #import "SearchResultViewController.h"
+#import "GoodsTableViewCell.h"
+
+#define kLeftCategory_width 80
 
 @interface GoodsManagementViewController ()
 
@@ -35,11 +38,38 @@
 -(void)createGoodsManagementControllerSubviews
 {
     SearchView *searchView = [[SearchView alloc] initWithFrame:CGRectMake(0, 64, kScreen_width, kSearchView_height)];
+    __weak GoodsManagementViewController *weakSelf = self;
     searchView.searchBtnBlock = ^{
         SearchResultViewController *resultVC = [[SearchResultViewController alloc] init];
-        [self.navigationController pushViewController:resultVC animated:YES];
+        [weakSelf.navigationController pushViewController:resultVC animated:YES];
     };
     [self.view addSubview:searchView];
+    
+    UITableView *goodsTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, searchView.bottom, kScreen_width, kScreen_height-64-kSearchView_height) style:UITableViewStylePlain];
+    goodsTableView.dataSource = self;
+    goodsTableView.delegate = self;
+    [self.view addSubview:goodsTableView];
+}
+
+#pragma mark UITableView
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *goodsID = @"goods";
+    GoodsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:goodsID];
+    if (!cell) {
+        cell = [[GoodsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:goodsID isAllScreen:YES];
+    }
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 130;
 }
 
 -(void)viewWillAppear:(BOOL)animated

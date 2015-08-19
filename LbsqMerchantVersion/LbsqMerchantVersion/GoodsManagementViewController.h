@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GoodsManagementViewController : UIViewController
+@interface GoodsManagementViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
 @end

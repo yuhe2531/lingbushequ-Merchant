@@ -80,6 +80,7 @@
 		3FF3146E1B847512004C620B /* GoodsManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3146D1B847512004C620B /* GoodsManagementViewController.m */; };
 		3FF314711B847F44004C620B /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF314701B847F44004C620B /* SearchView.m */; };
 		3FF314741B8481B7004C620B /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF314731B8481B7004C620B /* SearchResultViewController.m */; };
+		3FF314771B8489B6004C620B /* GoodsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF314761B8489B6004C620B /* GoodsTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -243,6 +244,8 @@
 		3FF314701B847F44004C620B /* SearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchView.m; sourceTree = "<group>"; };
 		3FF314721B8481B7004C620B /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
 		3FF314731B8481B7004C620B /* SearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
+		3FF314751B8489B6004C620B /* GoodsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsTableViewCell.h; sourceTree = "<group>"; };
+		3FF314761B8489B6004C620B /* GoodsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -567,6 +570,8 @@
 				3FF314701B847F44004C620B /* SearchView.m */,
 				3FF314721B8481B7004C620B /* SearchResultViewController.h */,
 				3FF314731B8481B7004C620B /* SearchResultViewController.m */,
+				3FF314751B8489B6004C620B /* GoodsTableViewCell.h */,
+				3FF314761B8489B6004C620B /* GoodsTableViewCell.m */,
 			);
 			name = GoodsManagement;
 			sourceTree = "<group>";
@@ -714,6 +719,7 @@
 				3FA0BECB1B8300C800FD42A0 /* MJRefreshLegendHeader.m in Sources */,
 				3FA0BEC81B8300C800FD42A0 /* MJRefreshGifHeader.m in Sources */,
 				3FA0BF0F1B830CE700FD42A0 /* HomeNavViewController.m in Sources */,
+				3FF314771B8489B6004C620B /* GoodsTableViewCell.m in Sources */,
 				3FA0BEC91B8300C800FD42A0 /* MJRefreshHeader.m in Sources */,
 				3FA0BEA21B8300AC00FD42A0 /* UIImage+WebP.m in Sources */,
 				3FA0BF0C1B830CC600FD42A0 /* TabbarViewController.m in Sources */,
