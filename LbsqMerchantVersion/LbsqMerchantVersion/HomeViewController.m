@@ -70,6 +70,9 @@
         }
         
     }
+    
+    NSInteger lineCount = (titles.count % 2 == 0) ? titles.count/2 : titles.count/2 + 1;
+    _scrollView.contentSize = CGSizeMake(kScreen_width, KHeaderView_height + KModelBtn_height*lineCount);
 }
 
 -(void)homeBtnViewAction:(UIButton *)button

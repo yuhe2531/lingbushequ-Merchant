@@ -10,4 +10,6 @@
 
 @interface ScrollHeaderView : UIView
 
+-(id)initWithFrame:(CGRect)frame titles:(NSArray *)titles;
+
 @end
