@@ -78,6 +78,8 @@
 		3FED75321B844E0000DD53B9 /* OrderStatisticsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FED75311B844E0000DD53B9 /* OrderStatisticsTableViewCell.m */; };
 		3FED75351B8451AF00DD53B9 /* ScrollHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FED75341B8451AF00DD53B9 /* ScrollHeaderView.m */; };
 		3FF3146E1B847512004C620B /* GoodsManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF3146D1B847512004C620B /* GoodsManagementViewController.m */; };
+		3FF314711B847F44004C620B /* SearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF314701B847F44004C620B /* SearchView.m */; };
+		3FF314741B8481B7004C620B /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FF314731B8481B7004C620B /* SearchResultViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -237,6 +239,10 @@
 		3FED75341B8451AF00DD53B9 /* ScrollHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScrollHeaderView.m; sourceTree = "<group>"; };
 		3FF3146C1B847512004C620B /* GoodsManagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsManagementViewController.h; sourceTree = "<group>"; };
 		3FF3146D1B847512004C620B /* GoodsManagementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsManagementViewController.m; sourceTree = "<group>"; };
+		3FF3146F1B847F44004C620B /* SearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchView.h; sourceTree = "<group>"; };
+		3FF314701B847F44004C620B /* SearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchView.m; sourceTree = "<group>"; };
+		3FF314721B8481B7004C620B /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
+		3FF314731B8481B7004C620B /* SearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -557,6 +563,10 @@
 			children = (
 				3FF3146C1B847512004C620B /* GoodsManagementViewController.h */,
 				3FF3146D1B847512004C620B /* GoodsManagementViewController.m */,
+				3FF3146F1B847F44004C620B /* SearchView.h */,
+				3FF314701B847F44004C620B /* SearchView.m */,
+				3FF314721B8481B7004C620B /* SearchResultViewController.h */,
+				3FF314731B8481B7004C620B /* SearchResultViewController.m */,
 			);
 			name = GoodsManagement;
 			sourceTree = "<group>";
@@ -678,6 +688,7 @@
 				3FA0BEFC1B83010F00FD42A0 /* AFURLConnectionOperation.m in Sources */,
 				3FA0BE731B8300A300FD42A0 /* UIViewAdditions.m in Sources */,
 				3FA0BF201B830DFC00FD42A0 /* ScanViewController.m in Sources */,
+				3FF314711B847F44004C620B /* SearchView.m in Sources */,
 				3FA0BEFF1B83010F00FD42A0 /* AFURLSessionManager.m in Sources */,
 				3FA0BEFD1B83010F00FD42A0 /* AFURLRequestSerialization.m in Sources */,
 				3FA0BE991B8300AC00FD42A0 /* SDWebImageCompat.m in Sources */,
@@ -716,6 +727,7 @@
 				3FA0BEA51B8300AC00FD42A0 /* UIView+WebCacheOperation.m in Sources */,
 				3F8BE1BB1B841131004F7BD4 /* ControlExtension.m in Sources */,
 				3FA0BE9F1B8300AC00FD42A0 /* UIButton+WebCache.m in Sources */,
+				3FF314741B8481B7004C620B /* SearchResultViewController.m in Sources */,
 				3FA0BF071B83010F00FD42A0 /* UIWebView+AFNetworking.m in Sources */,
 				3FA0BF011B83010F00FD42A0 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				3FA0BEC61B8300C800FD42A0 /* MJRefreshFooter.m in Sources */,

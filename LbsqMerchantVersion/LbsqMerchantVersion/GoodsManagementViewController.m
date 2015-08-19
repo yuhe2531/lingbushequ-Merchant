@@ -8,6 +8,8 @@
 
 #import "GoodsManagementViewController.h"
 #import "TabbarViewController.h"
+#import "SearchView.h"
+#import "SearchResultViewController.h"
 
 @interface GoodsManagementViewController ()
 
@@ -18,12 +20,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = kBackgroundColor;
+    self.view.backgroundColor = [UIColor whiteColor];
     
     self.navigationItem.titleView = [[YanMethodManager defaultManager] navibarTitle:@"商品管理"];
     [[YanMethodManager defaultManager] popToViewControllerOnClicked:self selector:@selector(popInGoodsManagementController)];
     
+    [self createGoodsManagementControllerSubviews];
+    
     // Do any additional setup after loading the view.
+}
+
+#define kSearchView_height 45
+//添加UI
+-(void)createGoodsManagementControllerSubviews
+{
+    SearchView *searchView = [[SearchView alloc] initWithFrame:CGRectMake(0, 64, kScreen_width, kSearchView_height)];
+    searchView.searchBtnBlock = ^{
+        SearchResultViewController *resultVC = [[SearchResultViewController alloc] init];
+        [self.navigationController pushViewController:resultVC animated:YES];
+    };
+    [self.view addSubview:searchView];
 }
 
 -(void)viewWillAppear:(BOOL)animated
