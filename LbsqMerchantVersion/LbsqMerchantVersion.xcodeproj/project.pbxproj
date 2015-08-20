@@ -84,6 +84,10 @@
 		3FD49D101B857A6900A65E65 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD49D0F1B857A6900A65E65 /* CoreVideo.framework */; };
 		3FD49D121B857A7100A65E65 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD49D111B857A7100A65E65 /* QuartzCore.framework */; };
 		3FD49D141B857A7E00A65E65 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD49D131B857A7E00A65E65 /* libiconv.dylib */; };
+		3FD49D1A1B85CA6E00A65E65 /* RetrievePWView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD49D191B85CA6E00A65E65 /* RetrievePWView.m */; };
+		3FD49D1D1B85CB5500A65E65 /* RetrievePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD49D1C1B85CB5500A65E65 /* RetrievePasswordViewController.m */; };
+		3FD49D211B85D33400A65E65 /* GCPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD49D201B85D33400A65E65 /* GCPlaceholderTextView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3FD49D241B85D3E500A65E65 /* FeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD49D231B85D3E500A65E65 /* FeedbackViewController.m */; };
 		3FED752B1B8421E400DD53B9 /* HomeBtnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FED752A1B8421E400DD53B9 /* HomeBtnView.m */; };
 		3FED752F1B8432A800DD53B9 /* OrderStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FED752E1B8432A800DD53B9 /* OrderStatisticsViewController.m */; };
 		3FED75321B844E0000DD53B9 /* OrderStatisticsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FED75311B844E0000DD53B9 /* OrderStatisticsTableViewCell.m */; };
@@ -273,6 +277,14 @@
 		3FD49D0F1B857A6900A65E65 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		3FD49D111B857A7100A65E65 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3FD49D131B857A7E00A65E65 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		3FD49D181B85CA6E00A65E65 /* RetrievePWView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetrievePWView.h; sourceTree = "<group>"; };
+		3FD49D191B85CA6E00A65E65 /* RetrievePWView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetrievePWView.m; sourceTree = "<group>"; };
+		3FD49D1B1B85CB5500A65E65 /* RetrievePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetrievePasswordViewController.h; sourceTree = "<group>"; };
+		3FD49D1C1B85CB5500A65E65 /* RetrievePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetrievePasswordViewController.m; sourceTree = "<group>"; };
+		3FD49D1F1B85D33400A65E65 /* GCPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCPlaceholderTextView.h; sourceTree = "<group>"; };
+		3FD49D201B85D33400A65E65 /* GCPlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCPlaceholderTextView.m; sourceTree = "<group>"; };
+		3FD49D221B85D3E500A65E65 /* FeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackViewController.h; sourceTree = "<group>"; };
+		3FD49D231B85D3E500A65E65 /* FeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackViewController.m; sourceTree = "<group>"; };
 		3FED75291B8421E400DD53B9 /* HomeBtnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeBtnView.h; sourceTree = "<group>"; };
 		3FED752A1B8421E400DD53B9 /* HomeBtnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeBtnView.m; sourceTree = "<group>"; };
 		3FED752D1B8432A800DD53B9 /* OrderStatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderStatisticsViewController.h; sourceTree = "<group>"; };
@@ -405,6 +417,7 @@
 				3FA0BF251B831B6800FD42A0 /* YanMethodManager.m */,
 				3FA0BF271B831BE900FD42A0 /* MBProgressHUD.h */,
 				3FA0BF281B831BE900FD42A0 /* MBProgressHUD.m */,
+				3FD49D1E1B85D33400A65E65 /* TextViewPlaceholder */,
 				3FD49CE81B857A1700A65E65 /* ZBarSDK */,
 				3FA0BECF1B8300F300FD42A0 /* AFNetworking */,
 				3FA0BEAA1B8300C800FD42A0 /* MJRefresh */,
@@ -599,6 +612,12 @@
 			children = (
 				3FA0BF1B1B830DEE00FD42A0 /* MineViewController.h */,
 				3FA0BF1C1B830DEE00FD42A0 /* MineViewController.m */,
+				3FD49D1B1B85CB5500A65E65 /* RetrievePasswordViewController.h */,
+				3FD49D1C1B85CB5500A65E65 /* RetrievePasswordViewController.m */,
+				3FD49D221B85D3E500A65E65 /* FeedbackViewController.h */,
+				3FD49D231B85D3E500A65E65 /* FeedbackViewController.m */,
+				3FD49D181B85CA6E00A65E65 /* RetrievePWView.h */,
+				3FD49D191B85CA6E00A65E65 /* RetrievePWView.m */,
 			);
 			name = Mine;
 			sourceTree = "<group>";
@@ -665,6 +684,15 @@
 				3FD49D051B857A1700A65E65 /* zbar-samples.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		3FD49D1E1B85D33400A65E65 /* TextViewPlaceholder */ = {
+			isa = PBXGroup;
+			children = (
+				3FD49D1F1B85D33400A65E65 /* GCPlaceholderTextView.h */,
+				3FD49D201B85D33400A65E65 /* GCPlaceholderTextView.m */,
+			);
+			path = TextViewPlaceholder;
 			sourceTree = "<group>";
 		};
 		3FED752C1B84328500DD53B9 /* OrderStatistics */ = {
@@ -803,6 +831,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FA0BF051B83010F00FD42A0 /* UIProgressView+AFNetworking.m in Sources */,
+				3FD49D241B85D3E500A65E65 /* FeedbackViewController.m in Sources */,
 				3FA0BF151B830D1700FD42A0 /* MineNavViewController.m in Sources */,
 				3FF3146E1B847512004C620B /* GoodsManagementViewController.m in Sources */,
 				3FA0BEA31B8300AC00FD42A0 /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -816,6 +845,7 @@
 				3FA0BF261B831B6800FD42A0 /* YanMethodManager.m in Sources */,
 				3FA0BF041B83010F00FD42A0 /* UIImageView+AFNetworking.m in Sources */,
 				3FA0BEFC1B83010F00FD42A0 /* AFURLConnectionOperation.m in Sources */,
+				3FD49D1A1B85CA6E00A65E65 /* RetrievePWView.m in Sources */,
 				3FA0BE731B8300A300FD42A0 /* UIViewAdditions.m in Sources */,
 				3FA0BF201B830DFC00FD42A0 /* ScanViewController.m in Sources */,
 				3FF314711B847F44004C620B /* SearchView.m in Sources */,
@@ -823,6 +853,7 @@
 				3FA0BEFD1B83010F00FD42A0 /* AFURLRequestSerialization.m in Sources */,
 				3FA0BE991B8300AC00FD42A0 /* SDWebImageCompat.m in Sources */,
 				3FA0BEA01B8300AC00FD42A0 /* UIImage+GIF.m in Sources */,
+				3FD49D1D1B85CB5500A65E65 /* RetrievePasswordViewController.m in Sources */,
 				3FA0BF031B83010F00FD42A0 /* UIButton+AFNetworking.m in Sources */,
 				3FA0BECE1B8300C800FD42A0 /* UIView+MJExtension.m in Sources */,
 				3FA0BEFB1B83010F00FD42A0 /* AFSecurityPolicy.m in Sources */,
@@ -844,6 +875,7 @@
 				3FA0BECB1B8300C800FD42A0 /* MJRefreshLegendHeader.m in Sources */,
 				3FA0BEC81B8300C800FD42A0 /* MJRefreshGifHeader.m in Sources */,
 				3FA0BF0F1B830CE700FD42A0 /* HomeNavViewController.m in Sources */,
+				3FD49D211B85D33400A65E65 /* GCPlaceholderTextView.m in Sources */,
 				3FF314771B8489B6004C620B /* GoodsTableViewCell.m in Sources */,
 				3FD49CE71B8567CC00A65E65 /* AddGoodsView.m in Sources */,
 				3FA0BEC91B8300C800FD42A0 /* MJRefreshHeader.m in Sources */,
