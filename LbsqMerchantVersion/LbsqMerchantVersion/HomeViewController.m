@@ -59,14 +59,14 @@
             btnView.button.tag = 200 + i;
             [btnView.button addTarget:self action:@selector(homeBtnViewAction:) forControlEvents:UIControlEventTouchUpInside];
             [YanMethodManager lineViewWithFrame:CGRectMake(0, btnView.height, btnView.width, 0.5) superView:btnView];
-            [YanMethodManager lineViewWithFrame:CGRectMake(btnView.width, 0, 0.5, btnView.height) superView:btnView];
+            [YanMethodManager lineViewWithFrame:CGRectMake(btnView.width-0.5, 0, 0.5, btnView.height) superView:btnView];
             [_scrollView addSubview:btnView];
         } else {
             HomeBtnView *btnView = [[HomeBtnView alloc] initWithFrame:CGRectMake(kScreen_width/2, top+_headerView.bottom, kScreen_width/2, KModelBtn_height) image:nil title:titles[i-1]];
             btnView.button.tag = 200 + i;
             [btnView.button addTarget:self action:@selector(homeBtnViewAction:) forControlEvents:UIControlEventTouchUpInside];
             [YanMethodManager lineViewWithFrame:CGRectMake(0, btnView.height, btnView.width, 0.5) superView:btnView];
-            [YanMethodManager lineViewWithFrame:CGRectMake(btnView.width, 0, 0.5, btnView.height) superView:btnView];
+            [YanMethodManager lineViewWithFrame:CGRectMake(btnView.width-0.5, 0, 0.5, btnView.height) superView:btnView];
             [_scrollView addSubview:btnView];
         }
         

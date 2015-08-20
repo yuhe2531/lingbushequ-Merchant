@@ -60,11 +60,13 @@
     [self.view addSubview:addView];
     
     _categoryTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, searchView.bottom, kLeftCategory_width, kScreen_height-64-kSearchView_height) style:UITableViewStylePlain];
+    _categoryTableView.showsVerticalScrollIndicator = NO;
     _categoryTableView.dataSource = self;
     _categoryTableView.delegate = self;
     [self.view addSubview:_categoryTableView];
     
     _goodsTableView = [[UITableView alloc] initWithFrame:CGRectMake(_categoryTableView.right, addView.bottom, kScreen_width-kLeftCategory_width, _categoryTableView.height-addView.height) style:UITableViewStylePlain];
+    _goodsTableView.showsVerticalScrollIndicator = NO;
     _goodsTableView.dataSource = self;
     _goodsTableView.delegate = self;
     [self.view addSubview:_goodsTableView];

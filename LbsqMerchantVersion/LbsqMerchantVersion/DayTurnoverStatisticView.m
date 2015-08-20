@@ -66,7 +66,7 @@
     _sumLabel.textColor = [UIColor orangeColor];
     [view addSubview:_sumLabel];
     
-    [YanMethodManager lineViewWithFrame:CGRectMake(view.width/2, _countLabel.top-KCountTitleL_height, 0.5, 2*_countLabel.height) superView:view];
+    [YanMethodManager lineViewWithFrame:CGRectMake(view.width/2, _countLabel.top-KCountTitleL_height, 0.5, 2*_countLabel.height-10) superView:view];
     
 }
 

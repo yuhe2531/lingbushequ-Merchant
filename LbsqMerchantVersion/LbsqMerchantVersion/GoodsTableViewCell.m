@@ -25,6 +25,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         _isAllScreen = all;
+        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         [self createGoodsTVSubviews];
     }
     return self;
