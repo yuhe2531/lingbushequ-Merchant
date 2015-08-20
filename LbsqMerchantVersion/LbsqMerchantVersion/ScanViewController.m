@@ -7,8 +7,11 @@
 //
 
 #import "ScanViewController.h"
+#import "ZBarSDK.h"
 
-@interface ScanViewController ()
+@interface ScanViewController ()<ZBarReaderViewDelegate, UIImagePickerControllerDelegate>
+
+@property (nonatomic, strong) ZBarReaderView *readerView;
 
 @end
 
@@ -16,8 +19,47 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor blueColor];
+    self.view.backgroundColor = kBackgroundColor;
+    self.navigationItem.titleView = [[YanMethodManager defaultManager] navibarTitle:@"条码扫描"];
+    if (_isPush) {
+        [[YanMethodManager defaultManager] popToViewControllerOnClicked:self selector:@selector(popInScanController)];
+    }
+    
     // Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    if (_readerView == nil) {
+        _readerView = [ZBarReaderView new];
+        _readerView.frame = self.view.bounds;
+        _readerView.readerDelegate = self;
+        [self.view addSubview:_readerView];
+        ZBarImageScanner *scanner = _readerView.scanner;
+        [scanner setSymbology:ZBAR_I25 config:ZBAR_CFG_ENABLE to:0];
+    }
+    
+    [_readerView start];
+}
+
+-(void)readerView:(ZBarReaderView *)readerView didReadSymbols:(ZBarSymbolSet *)symbols fromImage:(UIImage *)image
+{
+    ZBarSymbol *symbol = nil;
+    for (symbol in symbols) {
+        NSString *resultCode = symbol.data;
+        NSLog(@"========== result code = %@",resultCode);
+    }
+    [readerView stop];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [_readerView stop];
+}
+
+-(void)popInScanController
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

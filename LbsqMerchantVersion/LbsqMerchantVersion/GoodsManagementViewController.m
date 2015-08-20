@@ -11,10 +11,15 @@
 #import "SearchView.h"
 #import "SearchResultViewController.h"
 #import "GoodsTableViewCell.h"
+#import "AddGoodsView.h"
+#import "ScanViewController.h"
 
-#define kLeftCategory_width 80
+#define kLeftCategory_width 100
 
 @interface GoodsManagementViewController ()
+
+@property (nonatomic, strong) UITableView *categoryTableView;
+@property (nonatomic, strong) UITableView *goodsTableView;
 
 @end
 
@@ -34,6 +39,7 @@
 }
 
 #define kSearchView_height 45
+#define kAddView_height 40
 //添加UI
 -(void)createGoodsManagementControllerSubviews
 {
@@ -45,31 +51,84 @@
     };
     [self.view addSubview:searchView];
     
-    UITableView *goodsTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, searchView.bottom, kScreen_width, kScreen_height-64-kSearchView_height) style:UITableViewStylePlain];
-    goodsTableView.dataSource = self;
-    goodsTableView.delegate = self;
-    [self.view addSubview:goodsTableView];
+    AddGoodsView *addView = [[AddGoodsView alloc] initWithFrame:CGRectMake(kLeftCategory_width, 64+kSearchView_height, kScreen_width, kAddView_height)];
+    addView.addGoodsBlock = ^{
+        ScanViewController *scanVC = [[ScanViewController alloc] init];
+        scanVC.isPush = YES;
+        [weakSelf.navigationController pushViewController:scanVC animated:YES];
+    };
+    [self.view addSubview:addView];
+    
+    _categoryTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, searchView.bottom, kLeftCategory_width, kScreen_height-64-kSearchView_height) style:UITableViewStylePlain];
+    _categoryTableView.dataSource = self;
+    _categoryTableView.delegate = self;
+    [self.view addSubview:_categoryTableView];
+    
+    _goodsTableView = [[UITableView alloc] initWithFrame:CGRectMake(_categoryTableView.right, addView.bottom, kScreen_width-kLeftCategory_width, _categoryTableView.height-addView.height) style:UITableViewStylePlain];
+    _goodsTableView.dataSource = self;
+    _goodsTableView.delegate = self;
+    [self.view addSubview:_goodsTableView];
+    
+    [YanMethodManager lineViewWithFrame:CGRectMake(_categoryTableView.width, _categoryTableView.top, 0.5, _categoryTableView.height) superView:self.view];
+    
 }
 
 #pragma mark UITableView
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    if (tableView == _categoryTableView) {
+        return 2;
+    } else {
+        return 1;
+    }
+}
+
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    if (tableView == _categoryTableView) {
+        return 10;
+    } else {
+        return 10;
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *goodsID = @"goods";
-    GoodsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:goodsID];
-    if (!cell) {
-        cell = [[GoodsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:goodsID isAllScreen:YES];
+    if (tableView == _categoryTableView) {
+        static NSString *goodsID = @"category";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:goodsID];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:goodsID];
+        }
+        return cell;
+    } else {
+        static NSString *goodsID = @"goods";
+        GoodsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:goodsID];
+        if (!cell) {
+            cell = [[GoodsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:goodsID isAllScreen:NO];
+        }
+        return cell;
     }
-    return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 130;
+    if (tableView == _categoryTableView) {
+        return 44;
+    } else {
+        return 90;
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView == _categoryTableView) {
+        
+    } else {
+        [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated

@@ -19,4 +19,14 @@
     return label;
 }
 
++(UIButton *)buttonInitWithFrame:(CGRect)rect title:(NSString *)title style:(UIButtonType)type font:(NSInteger)font titleColor:(UIColor *)titleColor
+{
+    UIButton *button = [UIButton buttonWithType:type];
+    button.frame = rect;
+    [button setTitle:title forState:UIControlStateNormal];
+    [button setTitleColor:titleColor forState:UIControlStateNormal];
+    button.titleLabel.font = [UIFont systemFontOfSize:font];
+    return button;
+}
+
 @end

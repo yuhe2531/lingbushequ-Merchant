@@ -12,4 +12,6 @@
 
 +(UILabel *)labelInitWithFrame:(CGRect)rect title:(NSString *)title font:(NSInteger)font textAlignment:(NSTextAlignment)alignment;
 
++(UIButton *)buttonInitWithFrame:(CGRect)rect title:(NSString *)title style:(UIButtonType)type font:(NSInteger)font titleColor:(UIColor *)titleColor;
+
 @end

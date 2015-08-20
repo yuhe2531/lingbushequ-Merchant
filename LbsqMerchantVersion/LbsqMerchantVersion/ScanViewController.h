@@ -10,4 +10,6 @@
 
 @interface ScanViewController : UIViewController
 
+@property (nonatomic, assign) BOOL isPush;
+
 @end
