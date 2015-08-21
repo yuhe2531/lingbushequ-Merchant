@@ -8,8 +8,12 @@
 
 #import "MineViewController.h"
 #import "UIImageView+WebCache.h"
+#import "RetrievePasswordViewController.h"
+#import "FeedbackViewController.h"
 
 #define kImageHead_height 120
+
+#define kServiceNumber @"4000279567"
 
 @interface MineViewController ()
 
@@ -23,11 +27,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = kBackgroundColor;
+    self.view.backgroundColor = [UIColor whiteColor];
     
     self.navigationItem.titleView = [[YanMethodManager defaultManager] navibarTitle:@"我的"];
     
-    _mineArray = @[@[@"联系电话", @"客服热线 4000279567"], @[@"修改登录密码", @"营业状态", @"关于我们", @"意见反馈"]];
+    _mineArray = @[@[@"联系电话", [@"客服热线 " stringByAppendingString:kServiceNumber]], @[@"修改登录密码", @"营业状态", @"关于我们", @"意见反馈"]];
     
     [self createMineSubviews];
     
@@ -44,8 +48,15 @@
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_width, kImageHead_height)];
     _tableView.tableHeaderView = view;
     
-    UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_width, 0.5)];
-    footer.backgroundColor = kDividColor;
+    UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_width, 120)];
+    UIButton *signoutBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    signoutBtn.frame = CGRectMake(0, 50, kScreen_width-100, 44);
+    signoutBtn.centerX = footer.width/2;
+    signoutBtn.backgroundColor = kNaviBarColor;
+    [signoutBtn setTitle:@"退出" forState:UIControlStateNormal];
+    [signoutBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    signoutBtn.layer.cornerRadius = 5;
+    [footer addSubview:signoutBtn];
     _tableView.tableFooterView = footer;
     
     _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 64, kScreen_width, kImageHead_height)];
@@ -114,6 +125,8 @@
                 }
                 case 1:{//客服热线
                     
+                    [[YanMethodManager defaultManager] callPhoneActionWithNum:kServiceNumber viewController:self];
+                    
                     break;
                 }
                 default:
@@ -126,6 +139,10 @@
             switch (indexPath.row) {
                 case 0:{//修改密码
                     
+                    RetrievePasswordViewController *retrieveVC = [[RetrievePasswordViewController alloc] init];
+                    retrieveVC.isModify = YES;
+                    [self.navigationController pushViewController:retrieveVC animated:YES];
+                    
                     break;
                 }
                 case 1:{//营业状态
@@ -137,6 +154,9 @@
                     break;
                 }
                 case 3:{//意见反馈
+                    
+                    FeedbackViewController *feedbackVC = [[FeedbackViewController alloc] init];
+                    [self.navigationController pushViewController:feedbackVC animated:YES];
                     
                     break;
                 }

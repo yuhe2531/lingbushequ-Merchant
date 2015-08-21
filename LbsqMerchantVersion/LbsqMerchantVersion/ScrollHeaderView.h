@@ -10,6 +10,11 @@
 
 @interface ScrollHeaderView : UIView
 
+@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIView *markLine;
+
+@property (nonatomic, assign) NSInteger moveStep;
+
 -(id)initWithFrame:(CGRect)frame titles:(NSArray *)titles;
 
 @end
