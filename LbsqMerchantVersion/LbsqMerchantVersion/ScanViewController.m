@@ -8,8 +8,9 @@
 
 #import "ScanViewController.h"
 #import "ZBarSDK.h"
+#import "HomeNavViewController.h"
 
-@interface ScanViewController ()<ZBarReaderViewDelegate, UIImagePickerControllerDelegate>
+@interface ScanViewController ()<ZBarReaderViewDelegate>
 
 @property (nonatomic, strong) ZBarReaderView *readerView;
 
@@ -20,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = kBackgroundColor;
+    
     self.navigationItem.titleView = [[YanMethodManager defaultManager] navibarTitle:@"条码扫描"];
     if (_isPush) {
         [[YanMethodManager defaultManager] popToViewControllerOnClicked:self selector:@selector(popInScanController)];
@@ -54,7 +56,9 @@
 
 -(void)viewWillDisappear:(BOOL)animated
 {
-    [_readerView stop];
+    if (_isPush) {
+        _readerView.readerDelegate = nil;
+    }
 }
 
 -(void)popInScanController

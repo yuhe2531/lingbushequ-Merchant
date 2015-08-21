@@ -10,4 +10,6 @@
 
 @interface HomeNavViewController : UINavigationController<UIGestureRecognizerDelegate>
 
+@property (nonatomic, strong) UIPanGestureRecognizer *pan;
+
 @end

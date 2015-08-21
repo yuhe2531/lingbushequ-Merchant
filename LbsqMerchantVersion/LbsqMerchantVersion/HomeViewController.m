@@ -51,6 +51,7 @@
 -(void)addHomeBtns
 {
     NSArray *titles = @[@"订单统计", @"商品管理", @"口碑"];
+    
     for (int i = 1; i <= titles.count; i++) {
         
         int count = (i % 2 == 0) ? (count = i / 2) : (count = i / 2 + 1);

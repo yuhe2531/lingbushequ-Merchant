@@ -18,9 +18,9 @@
     [super viewDidLoad];
     self.navigationBar.barTintColor = kNaviBarColor;
     id target = self.interactivePopGestureRecognizer.delegate;
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:@selector(handleNavigationTransition:)];
-    pan.delegate = self;
-    [self.view addGestureRecognizer:pan];
+    _pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:@selector(handleNavigationTransition:)];
+    _pan.delegate = self;
+    [self.view addGestureRecognizer:_pan];
     self.interactivePopGestureRecognizer.enabled = NO;
     
     // Do any additional setup after loading the view.
