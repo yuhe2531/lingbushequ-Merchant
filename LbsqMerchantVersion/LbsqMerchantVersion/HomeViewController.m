@@ -11,6 +11,7 @@
 #import "HomeBtnView.h"
 #import "OrderStatisticsViewController.h"
 #import "GoodsManagementViewController.h"
+#import "PraiseViewController.h"
 
 @interface HomeViewController ()
 
@@ -93,6 +94,8 @@
         }
         case 203:{//口碑
             
+            PraiseViewController *praiseVC = [[PraiseViewController alloc] init];
+            [self.navigationController pushViewController:praiseVC animated:YES];
             
             break;
         }

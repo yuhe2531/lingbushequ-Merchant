@@ -7,8 +7,11 @@
 //
 
 #import "OrderStatisticsViewController.h"
+#import "ScrollHeaderView.h"
 
 @interface OrderStatisticsViewController ()
+
+@property (nonatomic, strong) ScrollHeaderView *scrollHeader;
 
 @end
 
@@ -16,10 +19,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = kBackgroundColor;
     self.navigationItem.titleView = [[YanMethodManager defaultManager] navibarTitle:@"订单统计"];
     [[YanMethodManager defaultManager] popToViewControllerOnClicked:self selector:@selector(popInOrderStatisticsVC)];
+    
+    [self createOrderStatisticsSubviews];
+    
     // Do any additional setup after loading the view.
+}
+
+#define kScrollHeader_height 45
+
+-(void)createOrderStatisticsSubviews
+{
+    NSArray *titles = @[@"每日", @"每周", @"每月"];
+    _scrollHeader = [[ScrollHeaderView alloc] initWithFrame:CGRectMake(0, 64, kScreen_width, kScrollHeader_height) titles:titles];
+    [self.view addSubview:_scrollHeader];
 }
 
 -(void)viewWillAppear:(BOOL)animated

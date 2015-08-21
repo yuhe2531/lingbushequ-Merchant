@@ -34,7 +34,7 @@
 
 -(void)createCodeSubviewsWithTitle:(NSString *)title
 {
-    _codeTF = [[UITextField alloc] initWithFrame:CGRectMake(kTitleLabel_left, kTitleLabel_top, self.width-2*kTitleLabel_left-kCodeBtn_width, kTitleLabel_height)];
+    _codeTF = [[UITextField alloc] initWithFrame:CGRectMake(kTitleLabel_left, kTitleLabel_top, self.width-2*kTitleLabel_left-kCodeBtn_width, self.height-2*kTitleLabel_top)];
     //    NSRange range = {0,title.length-1};
     //    NSString *placeTitle = [title substringWithRange:range];
     _codeTF.placeholder = [NSString stringWithFormat:@"%@",title];

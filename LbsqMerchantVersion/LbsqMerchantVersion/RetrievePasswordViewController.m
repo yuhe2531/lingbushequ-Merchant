@@ -69,7 +69,7 @@
     return 4;
 }
 
-#define kTableView_cell_height 55
+#define kTableView_cell_height 60
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return kTableView_cell_height;
@@ -82,14 +82,14 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     switch (indexPath.row) {
         case 0:{
-            _numberCell = [[RetrievePWView alloc] initWithFrame:CGRectMake(15, 15, kScreen_width-30, 35) title:@"手   机   号"];
+            _numberCell = [[RetrievePWView alloc] initWithFrame:CGRectMake(15, 15, kScreen_width-30, kTableView_cell_height-20) title:@"手   机   号"];
             _numberCell.codeTF.width = _numberCell.width - 30;
             [_numberCell.codeLabel removeFromSuperview];
             [cell.contentView addSubview:_numberCell];
         }
             break;
         case 1:{
-            _codeCell = [[RetrievePWView alloc] initWithFrame:CGRectMake(15, 15, kScreen_width-30, 35) title:@"验   证   码"];
+            _codeCell = [[RetrievePWView alloc] initWithFrame:CGRectMake(15, 15, kScreen_width-30, kTableView_cell_height-20) title:@"验   证   码"];
             _codeCell.codeBtnBlock = ^{
                 //一分钟倒计时
                 if ([[YanMethodManager defaultManager] validateMobile:_numberCell.codeTF.text] == NO) {
@@ -105,7 +105,7 @@
         }
             break;
         case 2:{
-            _passwordCell = [[RetrievePWView alloc] initWithFrame:CGRectMake(15, 15, kScreen_width-30, 35) title:@"密        码"];
+            _passwordCell = [[RetrievePWView alloc] initWithFrame:CGRectMake(15, 15, kScreen_width-30, kTableView_cell_height-20) title:@"密        码"];
             _passwordCell.codeTF.secureTextEntry = YES;
             _passwordCell.codeTF.width = _passwordCell.width - 30;
             [_passwordCell.codeLabel removeFromSuperview];
@@ -114,7 +114,7 @@
         }
             break;
         case 3:{
-            _vertifyPassCell = [[RetrievePWView alloc] initWithFrame:CGRectMake(15, 15, kScreen_width-30, 35) title:@"确 认 密 码"];
+            _vertifyPassCell = [[RetrievePWView alloc] initWithFrame:CGRectMake(15, 15, kScreen_width-30, kTableView_cell_height-20) title:@"确 认 密 码"];
             _vertifyPassCell.codeTF.secureTextEntry = YES;
             _vertifyPassCell.codeTF.width = _vertifyPassCell.width - 30;
             [_vertifyPassCell.codeLabel removeFromSuperview];

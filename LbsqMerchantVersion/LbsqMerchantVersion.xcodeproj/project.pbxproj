@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F75DC7A1B86BC3F0021E770 /* PraiseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F75DC791B86BC3F0021E770 /* PraiseViewController.m */; };
 		3F8BE1B81B840D8E004F7BD4 /* DayTurnoverStatisticView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8BE1B71B840D8E004F7BD4 /* DayTurnoverStatisticView.m */; };
 		3F8BE1BB1B841131004F7BD4 /* ControlExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8BE1BA1B841131004F7BD4 /* ControlExtension.m */; };
 		3FA0BE4C1B82B8E700FD42A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA0BE4B1B82B8E700FD42A0 /* main.m */; };
@@ -109,6 +110,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F75DC781B86BC3F0021E770 /* PraiseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PraiseViewController.h; sourceTree = "<group>"; };
+		3F75DC791B86BC3F0021E770 /* PraiseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PraiseViewController.m; sourceTree = "<group>"; };
 		3F8BE1B61B840D8E004F7BD4 /* DayTurnoverStatisticView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayTurnoverStatisticView.h; sourceTree = "<group>"; };
 		3F8BE1B71B840D8E004F7BD4 /* DayTurnoverStatisticView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayTurnoverStatisticView.m; sourceTree = "<group>"; };
 		3F8BE1B91B841131004F7BD4 /* ControlExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlExtension.h; sourceTree = "<group>"; };
@@ -327,6 +330,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F75DC771B86BC190021E770 /* Praise */ = {
+			isa = PBXGroup;
+			children = (
+				3F75DC781B86BC3F0021E770 /* PraiseViewController.h */,
+				3F75DC791B86BC3F0021E770 /* PraiseViewController.m */,
+			);
+			name = Praise;
+			sourceTree = "<group>";
+		};
 		3F8BE1B51B840D59004F7BD4 /* homeViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -364,6 +376,7 @@
 		3FA0BE481B82B8E700FD42A0 /* LbsqMerchantVersion */ = {
 			isa = PBXGroup;
 			children = (
+				3F75DC771B86BC190021E770 /* Praise */,
 				3FF3146B1B8474EC004C620B /* GoodsManagement */,
 				3FA0BF171B830DC100FD42A0 /* Mine */,
 				3FA0BF161B830DB700FD42A0 /* Home */,
@@ -839,6 +852,7 @@
 				3FA0BF231B83153E00FD42A0 /* TabBarItem.m in Sources */,
 				3FA0BEA11B8300AC00FD42A0 /* UIImage+MultiFormat.m in Sources */,
 				3FED752B1B8421E400DD53B9 /* HomeBtnView.m in Sources */,
+				3F75DC7A1B86BC3F0021E770 /* PraiseViewController.m in Sources */,
 				3FA0BE9C1B8300AC00FD42A0 /* SDWebImageDownloaderOperation.m in Sources */,
 				3FA0BECD1B8300C800FD42A0 /* UIScrollView+MJRefresh.m in Sources */,
 				3FA0BF021B83010F00FD42A0 /* UIAlertView+AFNetworking.m in Sources */,

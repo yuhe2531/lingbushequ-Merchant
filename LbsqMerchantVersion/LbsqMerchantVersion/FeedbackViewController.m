@@ -9,7 +9,7 @@
 #import "FeedbackViewController.h"
 #import "GCPlaceholderTextView.h"
 
-@interface FeedbackViewController ()
+@interface FeedbackViewController ()<UITextViewDelegate>
 
 @property (nonatomic, strong) GCPlaceholderTextView *feedbackTV;
 
@@ -30,6 +30,8 @@
     
     _feedbackTV = [[GCPlaceholderTextView alloc] initWithFrame:CGRectMake(15, 64+15, kScreen_width-30, kFeedbackTV_height)];
     _feedbackTV.placeholder = @"请在此填写您对我们的建议,如您有结款/投诉/验证/账号等问题需要处理,请拔打客服热线4000279567";
+    _feedbackTV.returnKeyType = UIReturnKeySend;
+    _feedbackTV.delegate = self;
     _feedbackTV.font = [UIFont systemFontOfSize:kFontSize_2];
     [self.view addSubview:_feedbackTV];
     
@@ -50,6 +52,16 @@
 -(void)popInFeedbackC
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark UITextView
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {
