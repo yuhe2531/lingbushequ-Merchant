@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>E132131C-79BB-4B11-BCA7-BC79F9AE5752</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>LbsqMerchantVersion</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>74F231306BC3D369E913D4717666ADCA78E2BF90</key>
 		<string>github.com:yuhe2531/lingbushequ-Merchant.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>LbsqMerchantVersion/LbsqMerchantVersion.xcodeproj/project.xcworkspace</string>
+	<string>LbsqMerchantVersion/LbsqMerchantVersion.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>74F231306BC3D369E913D4717666ADCA78E2BF90</key>

@@ -26,8 +26,6 @@ typedef void(^ShareSuccessBlock)(void);
 
 //获取日期格式
 -(NSString *)getDateFromTime:(NSString *)time;
-//获取文本的frame，（label自适应高度）
--(CGFloat)titleLabelHeightByText:(NSString *)string width:(CGFloat)width fontSize:(CGFloat)fontSize;
 //验证手机号码正则法则
 -(BOOL)validateMobile:(NSString *)mobileNum;
 //给字符串添加中划线

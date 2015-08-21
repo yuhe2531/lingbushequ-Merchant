@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^ScrollHeaderClicked)(UIButton *);
+
 @interface ScrollHeaderView : UIView
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIView *markLine;
 
 @property (nonatomic, assign) NSInteger moveStep;
+@property (nonatomic, copy) ScrollHeaderClicked scrollHeaderBlock;
 
 -(id)initWithFrame:(CGRect)frame titles:(NSArray *)titles;
 

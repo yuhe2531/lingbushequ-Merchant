@@ -1,38 +1,34 @@
 //
-//  SearchResultViewController.m
+//  SearchOrderViewController.m
 //  LbsqMerchantVersion
 //
-//  Created by Runkun1 on 15/8/19.
+//  Created by Runkun1 on 15/8/21.
 //  Copyright (c) 2015年 Runkun. All rights reserved.
 //
 
-#import "SearchResultViewController.h"
-#import "GoodsTableViewCell.h"
+#import "SearchOrderViewController.h"
 
-@interface SearchResultViewController ()<UITextFieldDelegate>
+@interface SearchOrderViewController ()<UITextFieldDelegate>
 
-@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UITextField *searchTF;
 
 @end
 
-@implementation SearchResultViewController
+@implementation SearchOrderViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    
     self.view.backgroundColor = kBackgroundColor;
+    [[YanMethodManager defaultManager] popToViewControllerOnClicked:self selector:@selector(popInSearchOrderC)];
     
-    [[YanMethodManager defaultManager] popToViewControllerOnClicked:self selector:@selector(searchResultPop)];
-    
-    [self createSearchResultSubviews];
-    
+    [self createSearchOrderSubviews];
     // Do any additional setup after loading the view.
 }
 
 #define kSearchTF_height 30
 
--(void)createSearchResultSubviews
+-(void)createSearchOrderSubviews
 {
     _searchTF = [[UITextField alloc] initWithFrame:CGRectMake(15, 5, kScreen_width-70, kSearchTF_height)];
     _searchTF.backgroundColor = kColorWithRGB(46, 156, 96);
@@ -43,7 +39,7 @@
     _searchTF.returnKeyType = UIReturnKeySearch;
     _searchTF.delegate = self;
     [_searchTF becomeFirstResponder];
-    _searchTF.placeholder = @"请输入商品名称";
+    _searchTF.placeholder = @"您可以输入订单号的后几位查询";
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _searchTF.height, _searchTF.height)];
     UIImageView *leftImageV = [[UIImageView alloc] initWithFrame:CGRectMake(5, 5, 20, 20)];
@@ -54,40 +50,6 @@
     _searchTF.leftView = view;
     self.navigationItem.titleView = _searchTF;
     
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, kScreen_width, kScreen_height-64) style:UITableViewStylePlain];
-    _tableView.dataSource = self;
-    _tableView.delegate = self;
-    [self.view addSubview:_tableView];
-}
-
--(void)viewWillDisappear:(BOOL)animated
-{
-    [_searchTF resignFirstResponder];
-}
-
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 10;
-}
-
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *result = @"search";
-    GoodsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:result];
-    if (!cell) {
-        cell = [[GoodsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:result isAllScreen:YES];
-    }
-    return cell;
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 130;
-}
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -96,10 +58,16 @@
     return YES;
 }
 
--(void)searchResultPop
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [_searchTF resignFirstResponder];
+}
+
+-(void)popInSearchOrderC
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -52,6 +52,9 @@
 
 -(void)scrollBtnAction:(UIButton *)button
 {
+    if (self.scrollHeaderBlock) {
+        self.scrollHeaderBlock(button);
+    }
     CGFloat titleWidth = kScreen_width / kScrollTitle_count;
     [UIView animateWithDuration:0.5 animations:^{
         _markLine.left = (button.tag-250) * titleWidth;
