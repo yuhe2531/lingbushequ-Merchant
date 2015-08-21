@@ -1,20 +1,20 @@
 //
-//  OrderViewController.m
+//  PraiseSingleViewController.m
 //  LbsqMerchantVersion
 //
 //  Created by Runkun1 on 15/8/21.
 //  Copyright (c) 2015年 Runkun. All rights reserved.
 //
 
-#import "OrderViewController.h"
-#import "OrderStatisticsTableViewCell.h"
+#import "PraiseSingleViewController.h"
+#import "PraiseTableViewCell.h"
+#import "PraiseModel.h"
 
-@interface OrderViewController ()
-
+@interface PraiseSingleViewController ()
 
 @end
 
-@implementation OrderViewController
+@implementation PraiseSingleViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,7 +30,7 @@
 {
     _step = step;
     NSLog(@"=============== %ld",_step);
-
+    
 }
 
 -(void)createOrderCSubviews
@@ -50,17 +50,20 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 65;
+    NSString *tempStr = @"正式测试数据，一个测试的数据，测定侧记十四时是谁测试，测试";
+    CGFloat height = [[YanMethodManager defaultManager] titleLabelHeightByText:tempStr width:kScreen_width-2*15 font:kFontSize_2];
+    return height + 90;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *order = @"statistics";
-    OrderStatisticsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:order];
+    static NSString *praise = @"praise";
+    PraiseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:praise];
     if (!cell) {
-        cell = [[OrderStatisticsTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:order];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell= [[PraiseTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:praise];
     }
+    PraiseModel *model = [[PraiseModel alloc] init];
+    cell.praise = model;
     return cell;
 }
 
@@ -68,7 +71,6 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

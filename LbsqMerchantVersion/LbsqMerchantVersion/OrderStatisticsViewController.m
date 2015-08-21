@@ -54,7 +54,7 @@
         [UIView animateWithDuration:0.5 animations:^{
             weakSelf.scrollView.contentOffset = CGPointMake(kScreen_width*(button.tag-250), weakSelf.scrollView.contentOffset.y);
             OrderViewController *orderVC = (OrderViewController *)weakSelf.statisticsContentArray[button.tag-250];
-            orderVC.step = button.tag - 250;
+            orderVC.step = button.tag - 250 + 1;
             
         }];
     };
@@ -63,6 +63,7 @@
     for (int i = 0; i < titles.count; i++) {
         OrderViewController *orderVC = [[OrderViewController alloc] init];
         orderVC.view.frame = CGRectMake(kScreen_width*i, 0, kScreen_width, kScreen_height-_scrollHeader.height-64);
+        orderVC.tableView.height = orderVC.view.height;
         [_statisticsContentArray addObject:orderVC];
         
       
@@ -72,7 +73,7 @@
         for (int i = 0; i < _statisticsContentArray.count; i++) {
             OrderViewController *orderVC = (OrderViewController *)_statisticsContentArray[i];
             if (i == 0) {
-                orderVC.step = 0;
+                orderVC.step = 1;
             }
             [_scrollView addSubview:orderVC.view];
         }
@@ -84,7 +85,7 @@
 {
     NSInteger offset_x = scrollView.contentOffset.x / kScreen_width;
     OrderViewController *orderVC = (OrderViewController *)_statisticsContentArray[offset_x];
-    orderVC.step = offset_x;
+    orderVC.step = offset_x + 1;
     
     _scrollHeader.moveStep = offset_x;
 }

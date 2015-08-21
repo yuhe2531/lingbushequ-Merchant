@@ -51,14 +51,6 @@ static YanMethodManager *manager = nil;
     return dateStr;
 
 }
-//获取文本的frame
--(CGFloat)titleLabelHeightByText:(NSString *)string width:(CGFloat)width fontSize:(CGFloat)fontSize
-{
-    CGSize size = CGSizeMake(width, 1000);
-    NSDictionary *attributedDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:fontSize],NSFontAttributeName, nil];
-    CGRect textRect = [string boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:attributedDic context:nil];
-    return textRect.size.width;
-}
 
 //验证手机号码正则法则
 -(BOOL)validateMobile:(NSString *)mobileNum
@@ -284,7 +276,6 @@ static YanMethodManager *manager = nil;
 
 -(CGFloat)titleLabelHeightByText:(NSString *)string width:(CGFloat)width font:(NSInteger)fontsize
 {
-    
     CGSize size = CGSizeMake(width, 1000);
     
     NSDictionary *attributedDic = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:fontsize],NSFontAttributeName, nil];
