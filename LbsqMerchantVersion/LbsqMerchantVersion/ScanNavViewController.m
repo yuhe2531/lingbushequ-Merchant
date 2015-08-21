@@ -8,7 +8,7 @@
 
 #import "ScanNavViewController.h"
 
-@interface ScanNavViewController ()
+@interface ScanNavViewController ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -18,6 +18,8 @@
     [super viewDidLoad];
     
     self.navigationBar.barTintColor = kNaviBarColor;
+    
+    self.navigationController.interactivePopGestureRecognizer.delegate = self;
     
     id target = self.interactivePopGestureRecognizer.delegate;
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:@selector(handleNavigationTransition:)];
@@ -30,11 +32,9 @@
 
 -(BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer
 {
-    if (self.childViewControllers.count == 1) {
-        return NO;
-    }
-    return YES;
+    return NO;
 }
+
 
 
 - (void)didReceiveMemoryWarning {
