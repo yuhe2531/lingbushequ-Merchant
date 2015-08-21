@@ -9,6 +9,7 @@
 #import "OrderStatisticsViewController.h"
 #import "ScrollHeaderView.h"
 #import "OrderViewController.h"
+#import "SearchOrderViewController.h"
 
 @interface OrderStatisticsViewController ()<UIScrollViewDelegate>
 
@@ -26,6 +27,13 @@
     self.view.backgroundColor = kBackgroundColor;
     self.navigationItem.titleView = [[YanMethodManager defaultManager] navibarTitle:@"订单统计"];
     [[YanMethodManager defaultManager] popToViewControllerOnClicked:self selector:@selector(popInOrderStatisticsVC)];
+    
+    UIButton *checkBtn = [ControlExtension buttonInitWithFrame:CGRectMake(0, 0, 40, 25) title:@"查询" style:UIButtonTypeSystem font:kFontSize_3 titleColor:[UIColor whiteColor]];
+    checkBtn.layer.cornerRadius = 5;
+    [checkBtn addTarget:self action:@selector(checkBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    checkBtn.layer.borderColor = kDividColor.CGColor;
+    checkBtn.layer.borderWidth = 0.5;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:checkBtn];
     
     [self createOrderStatisticsSubviews];
     
@@ -66,7 +74,6 @@
         orderVC.tableView.height = orderVC.view.height;
         [_statisticsContentArray addObject:orderVC];
         
-      
     }
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)0.0001*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
@@ -88,6 +95,12 @@
     orderVC.step = offset_x + 1;
     
     _scrollHeader.moveStep = offset_x;
+}
+
+-(void)checkBtnAction
+{
+    SearchOrderViewController *searchVC = [[SearchOrderViewController alloc] init];
+    [self.navigationController pushViewController:searchVC animated:YES];
 }
 
 -(void)viewWillAppear:(BOOL)animated

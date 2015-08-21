@@ -34,7 +34,7 @@
     _starCount = starCount;
     for (int i = 0; i < 5; i++) {
         UIImageView *imageView = (UIImageView *)[self viewWithTag:300+i];
-        if (i <= _starCount) {
+        if (i <= _starCount-1) {
             imageView.backgroundColor = [UIColor orangeColor];
         } else {
             imageView.backgroundColor = [UIColor lightGrayColor];

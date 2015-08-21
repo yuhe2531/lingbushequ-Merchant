@@ -65,6 +65,7 @@
     [self.contentView addSubview:_praiseL];
     
     _starsView = [[StarsView alloc] initWithFrame:CGRectMake(kScreen_width-kLeft_margin-5*kStarView_height-20, _praiseL.bottom+kMargin, 5*kStarView_height+20, kStarView_height)];
+    _starsView.starCount = 3;
     [self.contentView addSubview:_starsView];
 }
 

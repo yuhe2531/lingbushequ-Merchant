@@ -13,6 +13,7 @@
 		3F75DC831B86F27C0021E770 /* StarsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F75DC821B86F27C0021E770 /* StarsView.m */; };
 		3F75DC861B86F63C0021E770 /* PraiseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F75DC851B86F63C0021E770 /* PraiseTableViewCell.m */; };
 		3F75DC891B86F9B60021E770 /* PraiseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F75DC881B86F9B60021E770 /* PraiseModel.m */; };
+		3F75DC8C1B870AEE0021E770 /* SearchOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F75DC8B1B870AEE0021E770 /* SearchOrderViewController.m */; };
 		3F8BE1B81B840D8E004F7BD4 /* DayTurnoverStatisticView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8BE1B71B840D8E004F7BD4 /* DayTurnoverStatisticView.m */; };
 		3F8BE1BB1B841131004F7BD4 /* ControlExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8BE1BA1B841131004F7BD4 /* ControlExtension.m */; };
 		3FA0BE4C1B82B8E700FD42A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA0BE4B1B82B8E700FD42A0 /* main.m */; };
@@ -127,6 +128,8 @@
 		3F75DC851B86F63C0021E770 /* PraiseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PraiseTableViewCell.m; sourceTree = "<group>"; };
 		3F75DC871B86F9B60021E770 /* PraiseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PraiseModel.h; sourceTree = "<group>"; };
 		3F75DC881B86F9B60021E770 /* PraiseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PraiseModel.m; sourceTree = "<group>"; };
+		3F75DC8A1B870AEE0021E770 /* SearchOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchOrderViewController.h; sourceTree = "<group>"; };
+		3F75DC8B1B870AEE0021E770 /* SearchOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchOrderViewController.m; sourceTree = "<group>"; };
 		3F8BE1B61B840D8E004F7BD4 /* DayTurnoverStatisticView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayTurnoverStatisticView.h; sourceTree = "<group>"; };
 		3F8BE1B71B840D8E004F7BD4 /* DayTurnoverStatisticView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayTurnoverStatisticView.m; sourceTree = "<group>"; };
 		3F8BE1B91B841131004F7BD4 /* ControlExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlExtension.h; sourceTree = "<group>"; };
@@ -738,6 +741,8 @@
 				3FED752E1B8432A800DD53B9 /* OrderStatisticsViewController.m */,
 				3FED75301B844E0000DD53B9 /* OrderStatisticsTableViewCell.h */,
 				3FED75311B844E0000DD53B9 /* OrderStatisticsTableViewCell.m */,
+				3F75DC8A1B870AEE0021E770 /* SearchOrderViewController.h */,
+				3F75DC8B1B870AEE0021E770 /* SearchOrderViewController.m */,
 				3FED75331B8451AF00DD53B9 /* ScrollHeaderView.h */,
 				3FED75341B8451AF00DD53B9 /* ScrollHeaderView.m */,
 				3F75DC7B1B86C23D0021E770 /* OrderViewController.h */,
@@ -891,6 +896,7 @@
 				3FA0BF201B830DFC00FD42A0 /* ScanViewController.m in Sources */,
 				3FF314711B847F44004C620B /* SearchView.m in Sources */,
 				3FA0BEFF1B83010F00FD42A0 /* AFURLSessionManager.m in Sources */,
+				3F75DC8C1B870AEE0021E770 /* SearchOrderViewController.m in Sources */,
 				3FA0BEFD1B83010F00FD42A0 /* AFURLRequestSerialization.m in Sources */,
 				3FA0BE991B8300AC00FD42A0 /* SDWebImageCompat.m in Sources */,
 				3FA0BEA01B8300AC00FD42A0 /* UIImage+GIF.m in Sources */,

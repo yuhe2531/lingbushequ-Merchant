@@ -29,7 +29,7 @@
 
 -(void)createOrderStatisticsCellSubviews
 {
-    _countLabel = [ControlExtension labelInitWithFrame:CGRectMake(10, 10, kScreen_width/2, 20) title:@"订单总量:200" font:kFontSize_3 textAlignment:NSTextAlignmentLeft];
+    _countLabel = [ControlExtension labelInitWithFrame:CGRectMake(15, 10, kScreen_width/2, 20) title:@"订单总量:200" font:kFontSize_3 textAlignment:NSTextAlignmentLeft];
     _countLabel.textColor = kBlack_Color_1;
     [self.contentView addSubview:_countLabel];
     
