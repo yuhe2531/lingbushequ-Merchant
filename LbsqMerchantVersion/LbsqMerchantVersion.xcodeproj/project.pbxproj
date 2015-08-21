@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F75DC7A1B86BC3F0021E770 /* PraiseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F75DC791B86BC3F0021E770 /* PraiseViewController.m */; };
+		3F75DC7D1B86C23D0021E770 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F75DC7C1B86C23D0021E770 /* OrderViewController.m */; };
 		3F8BE1B81B840D8E004F7BD4 /* DayTurnoverStatisticView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8BE1B71B840D8E004F7BD4 /* DayTurnoverStatisticView.m */; };
 		3F8BE1BB1B841131004F7BD4 /* ControlExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8BE1BA1B841131004F7BD4 /* ControlExtension.m */; };
 		3FA0BE4C1B82B8E700FD42A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA0BE4B1B82B8E700FD42A0 /* main.m */; };
@@ -112,6 +113,8 @@
 /* Begin PBXFileReference section */
 		3F75DC781B86BC3F0021E770 /* PraiseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PraiseViewController.h; sourceTree = "<group>"; };
 		3F75DC791B86BC3F0021E770 /* PraiseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PraiseViewController.m; sourceTree = "<group>"; };
+		3F75DC7B1B86C23D0021E770 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
+		3F75DC7C1B86C23D0021E770 /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
 		3F8BE1B61B840D8E004F7BD4 /* DayTurnoverStatisticView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DayTurnoverStatisticView.h; sourceTree = "<group>"; };
 		3F8BE1B71B840D8E004F7BD4 /* DayTurnoverStatisticView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DayTurnoverStatisticView.m; sourceTree = "<group>"; };
 		3F8BE1B91B841131004F7BD4 /* ControlExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlExtension.h; sourceTree = "<group>"; };
@@ -717,6 +720,8 @@
 				3FED75311B844E0000DD53B9 /* OrderStatisticsTableViewCell.m */,
 				3FED75331B8451AF00DD53B9 /* ScrollHeaderView.h */,
 				3FED75341B8451AF00DD53B9 /* ScrollHeaderView.m */,
+				3F75DC7B1B86C23D0021E770 /* OrderViewController.h */,
+				3F75DC7C1B86C23D0021E770 /* OrderViewController.m */,
 			);
 			name = OrderStatistics;
 			sourceTree = "<group>";
@@ -858,6 +863,7 @@
 				3FA0BF021B83010F00FD42A0 /* UIAlertView+AFNetworking.m in Sources */,
 				3FA0BF261B831B6800FD42A0 /* YanMethodManager.m in Sources */,
 				3FA0BF041B83010F00FD42A0 /* UIImageView+AFNetworking.m in Sources */,
+				3F75DC7D1B86C23D0021E770 /* OrderViewController.m in Sources */,
 				3FA0BEFC1B83010F00FD42A0 /* AFURLConnectionOperation.m in Sources */,
 				3FD49D1A1B85CA6E00A65E65 /* RetrievePWView.m in Sources */,
 				3FA0BE731B8300A300FD42A0 /* UIViewAdditions.m in Sources */,

@@ -8,10 +8,13 @@
 
 #import "OrderStatisticsViewController.h"
 #import "ScrollHeaderView.h"
+#import "OrderViewController.h"
 
-@interface OrderStatisticsViewController ()
+@interface OrderStatisticsViewController ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong) ScrollHeaderView *scrollHeader;
+@property (nonatomic, strong) NSMutableArray *statisticsContentArray;
+@property (nonatomic, strong) UIScrollView *scrollView;
 
 @end
 
@@ -35,7 +38,55 @@
 {
     NSArray *titles = @[@"每日", @"每周", @"每月"];
     _scrollHeader = [[ScrollHeaderView alloc] initWithFrame:CGRectMake(0, 64, kScreen_width, kScrollHeader_height) titles:titles];
+    
     [self.view addSubview:_scrollHeader];
+    
+    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, _scrollHeader.bottom, kScreen_width, kScreen_height-64-_scrollHeader.height)];
+    _scrollView.showsHorizontalScrollIndicator = NO;
+    _scrollView.pagingEnabled = YES;
+    _scrollView.delegate = self;
+    _scrollView.contentSize = CGSizeMake(titles.count * kScreen_width, _scrollView.height);
+    [self.view addSubview:_scrollView];
+    
+    //顶部的三个切换按钮被点击
+    __weak OrderStatisticsViewController *weakSelf = self;
+    _scrollHeader.scrollHeaderBlock = ^(UIButton *button){
+        [UIView animateWithDuration:0.5 animations:^{
+            weakSelf.scrollView.contentOffset = CGPointMake(kScreen_width*(button.tag-250), weakSelf.scrollView.contentOffset.y);
+            OrderViewController *orderVC = (OrderViewController *)weakSelf.statisticsContentArray[button.tag-250];
+            orderVC.step = button.tag - 250;
+            
+        }];
+    };
+    
+    _statisticsContentArray = [NSMutableArray array];
+    for (int i = 0; i < titles.count; i++) {
+        OrderViewController *orderVC = [[OrderViewController alloc] init];
+        orderVC.view.frame = CGRectMake(kScreen_width*i, 0, kScreen_width, kScreen_height-_scrollHeader.height-64);
+        [_statisticsContentArray addObject:orderVC];
+        
+      
+    }
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)0.0001*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        for (int i = 0; i < _statisticsContentArray.count; i++) {
+            OrderViewController *orderVC = (OrderViewController *)_statisticsContentArray[i];
+            if (i == 0) {
+                orderVC.step = 0;
+            }
+            [_scrollView addSubview:orderVC.view];
+        }
+    });
+}
+
+
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    NSInteger offset_x = scrollView.contentOffset.x / kScreen_width;
+    OrderViewController *orderVC = (OrderViewController *)_statisticsContentArray[offset_x];
+    orderVC.step = offset_x;
+    
+    _scrollHeader.moveStep = offset_x;
 }
 
 -(void)viewWillAppear:(BOOL)animated
