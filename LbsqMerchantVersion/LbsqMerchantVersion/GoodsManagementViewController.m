@@ -13,6 +13,7 @@
 #import "GoodsTableViewCell.h"
 #import "AddGoodsView.h"
 #import "ScanViewController.h"
+#import "GoodsInfoViewController.h"
 
 #define kLeftCategory_width 100
 
@@ -130,6 +131,8 @@
         
     } else {
         [tableView deselectRowAtIndexPath:indexPath animated:NO];
+        GoodsInfoViewController *goodsVC = [[GoodsInfoViewController alloc] init];
+        [self.navigationController pushViewController:goodsVC animated:YES];
     }
 }
 
