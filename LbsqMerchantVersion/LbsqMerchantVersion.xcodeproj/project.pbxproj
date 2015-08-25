@@ -83,6 +83,10 @@
 		3FA0BF231B83153E00FD42A0 /* TabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA0BF221B83153E00FD42A0 /* TabBarItem.m */; };
 		3FA0BF261B831B6800FD42A0 /* YanMethodManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA0BF251B831B6800FD42A0 /* YanMethodManager.m */; };
 		3FA0BF291B831BE900FD42A0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA0BF281B831BE900FD42A0 /* MBProgressHUD.m */; };
+		3FB3375D1B8AFC0400F96AA7 /* VPImageCropperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3375C1B8AFC0400F96AA7 /* VPImageCropperViewController.m */; };
+		3FB337601B8B186C00F96AA7 /* System_ScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FB3375F1B8B186C00F96AA7 /* System_ScanViewController.m */; };
+		3FB337631B8B19E600F96AA7 /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FB337611B8B19E600F96AA7 /* line@2x.png */; };
+		3FB337641B8B19E600F96AA7 /* pick_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FB337621B8B19E600F96AA7 /* pick_bg@2x.png */; };
 		3FD49CE71B8567CC00A65E65 /* AddGoodsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD49CE61B8567CC00A65E65 /* AddGoodsView.m */; };
 		3FD49D061B857A1700A65E65 /* libzbar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD49D001B857A1700A65E65 /* libzbar.a */; };
 		3FD49D071B857A1700A65E65 /* zbar-back.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FD49D021B857A1700A65E65 /* zbar-back.png */; };
@@ -275,6 +279,12 @@
 		3FA0BF251B831B6800FD42A0 /* YanMethodManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YanMethodManager.m; sourceTree = "<group>"; };
 		3FA0BF271B831BE900FD42A0 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		3FA0BF281B831BE900FD42A0 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		3FB3375B1B8AFC0400F96AA7 /* VPImageCropperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VPImageCropperViewController.h; sourceTree = "<group>"; };
+		3FB3375C1B8AFC0400F96AA7 /* VPImageCropperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VPImageCropperViewController.m; sourceTree = "<group>"; };
+		3FB3375E1B8B186C00F96AA7 /* System_ScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = System_ScanViewController.h; sourceTree = "<group>"; };
+		3FB3375F1B8B186C00F96AA7 /* System_ScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = System_ScanViewController.m; sourceTree = "<group>"; };
+		3FB337611B8B19E600F96AA7 /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line@2x.png"; sourceTree = "<group>"; };
+		3FB337621B8B19E600F96AA7 /* pick_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pick_bg@2x.png"; sourceTree = "<group>"; };
 		3FD49CE51B8567CC00A65E65 /* AddGoodsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddGoodsView.h; sourceTree = "<group>"; };
 		3FD49CE61B8567CC00A65E65 /* AddGoodsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddGoodsView.m; sourceTree = "<group>"; };
 		3FD49CEC1B857A1700A65E65 /* Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Decoder.h; sourceTree = "<group>"; };
@@ -360,6 +370,8 @@
 		3F75DC771B86BC190021E770 /* Praise */ = {
 			isa = PBXGroup;
 			children = (
+				3FB337611B8B19E600F96AA7 /* line@2x.png */,
+				3FB337621B8B19E600F96AA7 /* pick_bg@2x.png */,
 				3F75DC781B86BC3F0021E770 /* PraiseViewController.h */,
 				3F75DC791B86BC3F0021E770 /* PraiseViewController.m */,
 				3F75DC7E1B86F1A10021E770 /* PraiseSingleViewController.h */,
@@ -465,6 +477,7 @@
 				3FA0BF251B831B6800FD42A0 /* YanMethodManager.m */,
 				3FA0BF271B831BE900FD42A0 /* MBProgressHUD.h */,
 				3FA0BF281B831BE900FD42A0 /* MBProgressHUD.m */,
+				3FB3375A1B8AFC0400F96AA7 /* VPImageCropper */,
 				3FD49D1E1B85D33400A65E65 /* TextViewPlaceholder */,
 				3FD49CE81B857A1700A65E65 /* ZBarSDK */,
 				3FA0BECF1B8300F300FD42A0 /* AFNetworking */,
@@ -670,6 +683,15 @@
 			name = Mine;
 			sourceTree = "<group>";
 		};
+		3FB3375A1B8AFC0400F96AA7 /* VPImageCropper */ = {
+			isa = PBXGroup;
+			children = (
+				3FB3375B1B8AFC0400F96AA7 /* VPImageCropperViewController.h */,
+				3FB3375C1B8AFC0400F96AA7 /* VPImageCropperViewController.m */,
+			);
+			path = VPImageCropper;
+			sourceTree = "<group>";
+		};
 		3FD49CE81B857A1700A65E65 /* ZBarSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -779,6 +801,8 @@
 				3F8C32331B880DF400F0FA53 /* GoodsInfoViewController.m */,
 				3F8C32351B8814AA00F0FA53 /* GoodsInfoTableViewCell.h */,
 				3F8C32361B8814AA00F0FA53 /* GoodsInfoTableViewCell.m */,
+				3FB3375E1B8B186C00F96AA7 /* System_ScanViewController.h */,
+				3FB3375F1B8B186C00F96AA7 /* System_ScanViewController.m */,
 			);
 			name = GoodsManagement;
 			sourceTree = "<group>";
@@ -832,6 +856,7 @@
 				TargetAttributes = {
 					3FA0BE451B82B8E700FD42A0 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = YBF3GN7V3Z;
 					};
 					3FA0BE5E1B82B8E800FD42A0 = {
 						CreatedOnToolsVersion = 6.4;
@@ -867,9 +892,11 @@
 				3FA0BE5A1B82B8E700FD42A0 /* LaunchScreen.xib in Resources */,
 				3FA0BEC31B8300C800FD42A0 /* MJRefresh.bundle in Resources */,
 				3FA0BE571B82B8E700FD42A0 /* Images.xcassets in Resources */,
+				3FB337641B8B19E600F96AA7 /* pick_bg@2x.png in Resources */,
 				3FD49D0A1B857A1700A65E65 /* zbar-samples.png in Resources */,
 				3FD49D081B857A1700A65E65 /* zbar-help.html in Resources */,
 				3FD49D071B857A1700A65E65 /* zbar-back.png in Resources */,
+				3FB337631B8B19E600F96AA7 /* line@2x.png in Resources */,
 				3FD49D091B857A1700A65E65 /* zbar-helpicons.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -888,6 +915,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FB3375D1B8AFC0400F96AA7 /* VPImageCropperViewController.m in Sources */,
 				3FA0BF051B83010F00FD42A0 /* UIProgressView+AFNetworking.m in Sources */,
 				3FD49D241B85D3E500A65E65 /* FeedbackViewController.m in Sources */,
 				3FA0BF151B830D1700FD42A0 /* MineNavViewController.m in Sources */,
@@ -911,6 +939,7 @@
 				3FA0BF201B830DFC00FD42A0 /* ScanViewController.m in Sources */,
 				3FF314711B847F44004C620B /* SearchView.m in Sources */,
 				3FA0BEFF1B83010F00FD42A0 /* AFURLSessionManager.m in Sources */,
+				3FB337601B8B186C00F96AA7 /* System_ScanViewController.m in Sources */,
 				3F75DC8C1B870AEE0021E770 /* SearchOrderViewController.m in Sources */,
 				3FA0BEFD1B83010F00FD42A0 /* AFURLRequestSerialization.m in Sources */,
 				3FA0BE991B8300AC00FD42A0 /* SDWebImageCompat.m in Sources */,
@@ -1030,6 +1059,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1073,7 +1103,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1098,6 +1129,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LbsqMerchantVersion/thirdPart/PrefixHeader.pch";
 				INFOPLIST_FILE = LbsqMerchantVersion/Info.plist;
@@ -1107,6 +1139,7 @@
 					"$(PROJECT_DIR)/LbsqMerchantVersion/thirdPart/ZBarSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c057a7f4-a830-4251-b7b2-4006cd5d373d";
 			};
 			name = Debug;
 		};
@@ -1114,7 +1147,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LbsqMerchantVersion/thirdPart/PrefixHeader.pch";
 				INFOPLIST_FILE = LbsqMerchantVersion/Info.plist;
@@ -1124,6 +1158,7 @@
 					"$(PROJECT_DIR)/LbsqMerchantVersion/thirdPart/ZBarSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "c057a7f4-a830-4251-b7b2-4006cd5d373d";
 			};
 			name = Release;
 		};

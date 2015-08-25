@@ -8,13 +8,19 @@
 
 #import "GoodsInfoTableViewCell.h"
 
+@interface GoodsInfoTableViewCell ()
+
+@property (nonatomic, copy) NSString *title;
+
+@end
+
 @implementation GoodsInfoTableViewCell
 
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier title:(NSString *)title
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        [self creageGoodsInfoSubviewsWithTitle:title];
+        _title = title;
     }
     return self;
 }
@@ -33,13 +39,22 @@
 -(void)setIsPrice:(BOOL)isPrice
 {
     _isPrice = isPrice;
+    [self.contentView removeAllSubviews];
+    [self creageGoodsInfoSubviewsWithTitle:_title];
     if (_isPrice) {
         _contentTF.width = _contentTF.width - 60 - 10;
-        UISwitch *goodsSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(_contentTF.right+5, _contentTF.top, 60, 30)];
-        goodsSwitch.centerY = _contentTF.centerY;
-        [goodsSwitch addTarget:self action:@selector(goodsSwichAction:) forControlEvents:UIControlEventValueChanged];
-        [self.contentView addSubview:goodsSwitch];
+        _goodsSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(_contentTF.right+5, _contentTF.top, 60, 30)];
+        _goodsSwitch.tag = 2000;
+        _goodsSwitch.centerY = _contentTF.centerY;
+        [_goodsSwitch addTarget:self action:@selector(goodsSwichAction:) forControlEvents:UIControlEventValueChanged];
+        [self.contentView addSubview:_goodsSwitch];
     }
+}
+
+-(void)setCanEdit:(BOOL)canEdit
+{
+    _canEdit = canEdit;
+    _contentTF.enabled = _canEdit;
 }
 
 -(void)goodsSwichAction:(UISwitch *)goodsSwitch

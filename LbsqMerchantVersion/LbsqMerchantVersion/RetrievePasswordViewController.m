@@ -146,6 +146,11 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    ((TabbarViewController *)self.tabBarController).tabBarView.hidden = YES;
+}
+
 -(void)popInRetrieveC
 {
     [self.navigationController popViewControllerAnimated:YES];

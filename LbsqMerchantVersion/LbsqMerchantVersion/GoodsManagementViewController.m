@@ -14,6 +14,7 @@
 #import "AddGoodsView.h"
 #import "ScanViewController.h"
 #import "GoodsInfoViewController.h"
+#import "System_ScanViewController.h"
 
 #define kLeftCategory_width 100
 
@@ -21,6 +22,10 @@
 
 @property (nonatomic, strong) UITableView *categoryTableView;
 @property (nonatomic, strong) UITableView *goodsTableView;
+@property (nonatomic, strong) NSMutableArray *sections;//大分类
+@property (nonatomic, strong) NSMutableArray *rows;//小分类
+@property (nonatomic, strong) NSMutableArray *showRowsArray;
+@property (nonatomic, strong) NSIndexPath *selectIndexPath;
 
 @end
 
@@ -33,6 +38,21 @@
     
     self.navigationItem.titleView = [[YanMethodManager defaultManager] navibarTitle:@"商品管理"];
     [[YanMethodManager defaultManager] popToViewControllerOnClicked:self selector:@selector(popInGoodsManagementController)];
+    
+    _selectIndexPath = nil;
+    
+    //**************************************************************************/测试代码
+    _sections = [NSMutableArray arrayWithArray:@[@"一级分类一级分类", @"一级分类", @"一级分类", @"一级分类", @"一级分类"]];
+    _rows = [NSMutableArray array];
+    self.showRowsArray = [NSMutableArray array];
+    NSInteger count = _sections.count;
+    for (int i = 0; i < count; i++) {
+        
+        NSArray *tempArray = @[@"二级分类二级分类", @"二级分类", @"二级分类", @"二级分类", @"二级分类", @"二级分类"];
+        [_rows addObject:tempArray];
+        [_showRowsArray addObject:@NO];
+    }
+    ////////*****************************/////////
     
     [self createGoodsManagementControllerSubviews];
     
@@ -54,9 +74,13 @@
     
     AddGoodsView *addView = [[AddGoodsView alloc] initWithFrame:CGRectMake(kLeftCategory_width, 64+kSearchView_height, kScreen_width, kAddView_height)];
     addView.addGoodsBlock = ^{
-        ScanViewController *scanVC = [[ScanViewController alloc] init];
-        scanVC.isPush = YES;
-        [weakSelf.navigationController pushViewController:scanVC animated:YES];
+//        ScanViewController *scanVC = [[ScanViewController alloc] init];
+//        scanVC.isPush = YES;
+//        [weakSelf.navigationController pushViewController:scanVC animated:YES];
+        
+        System_ScanViewController *sysVC = [[System_ScanViewController alloc] init];
+        sysVC.isPush = YES;
+        [weakSelf.navigationController pushViewController:sysVC animated:YES];
     };
     [self.view addSubview:addView];
     
@@ -65,6 +89,8 @@
     _categoryTableView.dataSource = self;
     _categoryTableView.delegate = self;
     [self.view addSubview:_categoryTableView];
+    UIView *cateLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_width, 1)];
+    _categoryTableView.tableFooterView = cateLine;
     
     _goodsTableView = [[UITableView alloc] initWithFrame:CGRectMake(_categoryTableView.right, addView.bottom, kScreen_width-kLeftCategory_width, _categoryTableView.height-addView.height) style:UITableViewStylePlain];
     _goodsTableView.showsVerticalScrollIndicator = NO;
@@ -81,17 +107,53 @@
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     if (tableView == _categoryTableView) {
-        return 2;
+        return _sections.count;
     } else {
         return 1;
     }
 }
 
+#define kSection_header 50
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (tableView == _categoryTableView) {
+        UIView *sectionHeader = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kLeftCategory_width, kSection_header)];
+        sectionHeader.backgroundColor = kBackgroundColor;
+        UILabel *titleLabel = [ControlExtension labelInitWithFrame:CGRectMake(10, 0, sectionHeader.width-10, sectionHeader.height) title:_sections[section] font:kFontSize_3 textAlignment:NSTextAlignmentCenter];
+        titleLabel.numberOfLines = 2;
+        titleLabel.textColor = kNaviBarColor;
+        [sectionHeader addSubview:titleLabel];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+        button.tag = 450 + section;
+        button.frame = CGRectMake(10, 0, sectionHeader.width-10, sectionHeader.height);
+        button.titleLabel.numberOfLines = 2;
+        [button addTarget:self action:@selector(categoryButtonSectionAction:) forControlEvents:UIControlEventTouchUpInside];
+        [sectionHeader addSubview:button];
+        return sectionHeader;
+    }
+    
+    return nil;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (tableView == _categoryTableView) {
+        return kSection_header;
+    }
+    return 0;
+}
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (tableView == _categoryTableView) {
-        return 10;
+        if ([_showRowsArray[section]  isEqual: @YES]) {
+            NSArray *array = _rows[section];
+            return array.count;
+        } else {
+            return 0;
+        }
+        
     } else {
         return 10;
     }
@@ -104,6 +166,20 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:goodsID];
         if (!cell) {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:goodsID];
+        }
+        NSArray *array = _rows[indexPath.section];
+        cell.textLabel.text = array[indexPath.row];
+        cell.textLabel.font = [UIFont systemFontOfSize:kFontSize_2];
+        cell.textLabel.numberOfLines = 2;
+        UIView *line = [cell viewWithTag:5000];
+        [line removeFromSuperview];
+        if (_selectIndexPath.section == indexPath.section) {
+            if (_selectIndexPath.row == indexPath.row) {
+                UIView *leftLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 3, 44)];
+                leftLine.tag = 5000;
+                leftLine.backgroundColor = kNaviBarColor;
+                [cell.contentView addSubview:leftLine];
+            }
         }
         return cell;
     } else {
@@ -127,13 +203,28 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
     if (tableView == _categoryTableView) {
-        
+        _selectIndexPath = indexPath;
+        [tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        [tableView reloadData];
     } else {
-        [tableView deselectRowAtIndexPath:indexPath animated:NO];
+        
         GoodsInfoViewController *goodsVC = [[GoodsInfoViewController alloc] init];
         [self.navigationController pushViewController:goodsVC animated:YES];
     }
+}
+
+-(void)categoryButtonSectionAction:(UIButton *)button
+{
+    NSLog(@"============ button tag = %ld",button.tag);
+    NSInteger index = button.tag - 450;
+    if ([_showRowsArray[index] isEqual:@NO]) {
+        [_showRowsArray replaceObjectAtIndex:index withObject:@YES];
+    } else {
+        [_showRowsArray replaceObjectAtIndex:index withObject:@NO];
+    }
+    [_categoryTableView reloadData];
 }
 
 -(void)viewWillAppear:(BOOL)animated

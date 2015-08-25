@@ -41,6 +41,7 @@
     [sendBtn addTarget:self action:@selector(sendBtnAction) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:sendBtn];
     
+    
     // Do any additional setup after loading the view.
 }
 
@@ -52,6 +53,11 @@
 -(void)popInFeedbackC
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    ((TabbarViewController *)self.tabBarController).tabBarView.hidden = YES;
 }
 
 #pragma mark UITextView

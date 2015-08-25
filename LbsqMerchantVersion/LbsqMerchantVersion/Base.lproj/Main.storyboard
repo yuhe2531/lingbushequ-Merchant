@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="604" y="979"/>
         </scene>
-        <!--Scan View Controller-->
+        <!--System Scan View Controller-->
         <scene sceneID="vNP-gZ-kUd">
             <objects>
-                <viewController id="K3c-rY-z5A" customClass="ScanViewController" sceneMemberID="viewController">
+                <viewController id="K3c-rY-z5A" customClass="System_ScanViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Czt-YK-jd5"/>
                         <viewControllerLayoutGuide type="bottom" id="OOH-Et-f4D"/>

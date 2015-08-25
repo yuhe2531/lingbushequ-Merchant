@@ -10,6 +10,7 @@
 #import "UIImageView+WebCache.h"
 #import "RetrievePasswordViewController.h"
 #import "FeedbackViewController.h"
+#import "TabbarViewController.h"
 
 #define kImageHead_height 120
 
@@ -214,6 +215,10 @@
     }
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    ((TabbarViewController *)self.tabBarController).tabBarView.hidden = NO;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
