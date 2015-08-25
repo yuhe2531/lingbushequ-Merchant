@@ -32,7 +32,8 @@
     [self.contentView addSubview:titleL];
     
     _contentTF = [[UITextField alloc] initWithFrame:CGRectMake(titleL.right+5, titleL.top, kScreen_width-titleL.width-20, titleL.height)];
-    _contentTF.placeholder = @"placeholder";
+    _contentTF.font = [UIFont systemFontOfSize:kFontSize_2];
+    _contentTF.textColor = kNaviBarColor;
     [self.contentView addSubview:_contentTF];
 }
 

@@ -61,6 +61,7 @@
     PraiseTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:praise];
     if (!cell) {
         cell= [[PraiseTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:praise];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     PraiseModel *model = [[PraiseModel alloc] init];
     cell.praise = model;

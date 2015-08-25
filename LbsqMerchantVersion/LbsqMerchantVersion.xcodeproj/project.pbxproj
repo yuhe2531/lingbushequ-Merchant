@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F6C582E1B8C062C00F9D5FC /* EveryOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6C582D1B8C062C00F9D5FC /* EveryOrderViewController.m */; };
+		3F6C58311B8C068200F9D5FC /* EveryOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6C58301B8C068200F9D5FC /* EveryOrderTableViewCell.m */; };
 		3F75DC7A1B86BC3F0021E770 /* PraiseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F75DC791B86BC3F0021E770 /* PraiseViewController.m */; };
 		3F75DC7D1B86C23D0021E770 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F75DC7C1B86C23D0021E770 /* OrderViewController.m */; };
 		3F75DC801B86F1A10021E770 /* PraiseSingleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F75DC7F1B86F1A10021E770 /* PraiseSingleViewController.m */; };
@@ -123,6 +125,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F6C582C1B8C062C00F9D5FC /* EveryOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EveryOrderViewController.h; sourceTree = "<group>"; };
+		3F6C582D1B8C062C00F9D5FC /* EveryOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EveryOrderViewController.m; sourceTree = "<group>"; };
+		3F6C582F1B8C068200F9D5FC /* EveryOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EveryOrderTableViewCell.h; sourceTree = "<group>"; };
+		3F6C58301B8C068200F9D5FC /* EveryOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EveryOrderTableViewCell.m; sourceTree = "<group>"; };
 		3F75DC781B86BC3F0021E770 /* PraiseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PraiseViewController.h; sourceTree = "<group>"; };
 		3F75DC791B86BC3F0021E770 /* PraiseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PraiseViewController.m; sourceTree = "<group>"; };
 		3F75DC7B1B86C23D0021E770 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
@@ -778,6 +784,10 @@
 				3FED75341B8451AF00DD53B9 /* ScrollHeaderView.m */,
 				3F75DC7B1B86C23D0021E770 /* OrderViewController.h */,
 				3F75DC7C1B86C23D0021E770 /* OrderViewController.m */,
+				3F6C582C1B8C062C00F9D5FC /* EveryOrderViewController.h */,
+				3F6C582D1B8C062C00F9D5FC /* EveryOrderViewController.m */,
+				3F6C582F1B8C068200F9D5FC /* EveryOrderTableViewCell.h */,
+				3F6C58301B8C068200F9D5FC /* EveryOrderTableViewCell.m */,
 			);
 			name = OrderStatistics;
 			sourceTree = "<group>";
@@ -929,6 +939,7 @@
 				3FA0BE9C1B8300AC00FD42A0 /* SDWebImageDownloaderOperation.m in Sources */,
 				3F75DC861B86F63C0021E770 /* PraiseTableViewCell.m in Sources */,
 				3FA0BECD1B8300C800FD42A0 /* UIScrollView+MJRefresh.m in Sources */,
+				3F6C58311B8C068200F9D5FC /* EveryOrderTableViewCell.m in Sources */,
 				3FA0BF021B83010F00FD42A0 /* UIAlertView+AFNetworking.m in Sources */,
 				3FA0BF261B831B6800FD42A0 /* YanMethodManager.m in Sources */,
 				3FA0BF041B83010F00FD42A0 /* UIImageView+AFNetworking.m in Sources */,
@@ -943,6 +954,7 @@
 				3F75DC8C1B870AEE0021E770 /* SearchOrderViewController.m in Sources */,
 				3FA0BEFD1B83010F00FD42A0 /* AFURLRequestSerialization.m in Sources */,
 				3FA0BE991B8300AC00FD42A0 /* SDWebImageCompat.m in Sources */,
+				3F6C582E1B8C062C00F9D5FC /* EveryOrderViewController.m in Sources */,
 				3F8C32371B8814AA00F0FA53 /* GoodsInfoTableViewCell.m in Sources */,
 				3FA0BEA01B8300AC00FD42A0 /* UIImage+GIF.m in Sources */,
 				3FD49D1D1B85CB5500A65E65 /* RetrievePasswordViewController.m in Sources */,

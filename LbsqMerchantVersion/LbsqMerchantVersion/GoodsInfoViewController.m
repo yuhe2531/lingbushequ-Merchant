@@ -23,6 +23,7 @@
 @property (nonatomic, strong) GoodsHeaderView *headerView;
 @property (nonatomic, assign) BOOL isRecommend;
 @property (nonatomic, assign) BOOL isTejia;
+@property (nonatomic, strong) NSMutableArray *infos;//储存商品信息
 
 @end
 
@@ -32,6 +33,10 @@
     [super viewDidLoad];
     self.automaticallyAdjustsScrollViewInsets = NO;
     _canEdit = NO;
+    
+    ///////***********测试代码************////////
+    _infos = [NSMutableArray arrayWithArray:@[@"一级分类－二级分类", @"可口可乐200ml", @"¥ 15.0", @"¥ 12.0", @""]];
+    ////**********************//
     
     self.view.backgroundColor = kBackgroundColor;
     self.navigationItem.titleView = [[YanMethodManager defaultManager] navibarTitle:@"商品信息"];
@@ -43,7 +48,6 @@
     editBtn.layer.cornerRadius = 4;
     [editBtn addTarget:self action:@selector(editBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:editBtn];
-    
     [self createGoodsInfoCSubviews];
     
     //键盘通知
@@ -62,7 +66,6 @@
     __weak GoodsInfoViewController *weakSelf = self;
     _headerView.tapActionBlock = ^{
         if (weakSelf.canEdit) {
-            NSLog(@"========== 更换商品图片");
             UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:weakSelf cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照", @"从相册选区", nil];
             [actionSheet showInView:weakSelf.view];
         }
@@ -131,14 +134,20 @@
     } else {
         cell.isPrice = NO;
     }
+    cell.contentTF.text = _infos[indexPath.row];
     cell.contentTF.returnKeyType = UIReturnKeyDone;
     cell.contentTF.tag = 400 + indexPath.row;
     cell.contentTF.delegate = self;
-    cell.canEdit = _canEdit;
     if (indexPath.row == 3) {
         cell.goodsSwitch.on = _isRecommend;
     } else {
         cell.goodsSwitch.on = _isTejia;
+    }
+    if (indexPath.row == 4) {
+        cell.contentTF.placeholder = nil;
+        cell.contentTF.enabled = NO;
+    } else {
+        cell.canEdit = _canEdit;
     }
     cell.goodsSwitchBlock = ^(UISwitch *goodsSwitch){
         if (indexPath.row == 3) {
@@ -154,9 +163,10 @@
 
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
-    if (textField.tag == 403 || textField.tag == 404) {
+    if (textField.tag == 403 || textField.tag == 402) {
+        NSString *str = [textField.text stringByReplacingOccurrencesOfString:@"¥ " withString:@""];
         if (textField.text.length > 0) {
-            textField.text = [@"¥ " stringByAppendingString:textField.text];
+            textField.text = [@"¥ " stringByAppendingString:str];
         }
     }
     return YES;
@@ -395,6 +405,11 @@
     //pop the context to get back to the default
     UIGraphicsEndImageContext();
     return newImage;
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark portraitImageView getter

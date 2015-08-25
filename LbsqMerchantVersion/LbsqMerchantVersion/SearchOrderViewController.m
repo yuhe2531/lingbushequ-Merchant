@@ -7,10 +7,12 @@
 //
 
 #import "SearchOrderViewController.h"
+#import "EveryOrderTableViewCell.h"
 
-@interface SearchOrderViewController ()<UITextFieldDelegate>
+@interface SearchOrderViewController ()<UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITextField *searchTF;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -18,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.automaticallyAdjustsScrollViewInsets = NO;
     self.view.backgroundColor = kBackgroundColor;
     [[YanMethodManager defaultManager] popToViewControllerOnClicked:self selector:@selector(popInSearchOrderC)];
     
@@ -50,7 +52,40 @@
     _searchTF.leftView = view;
     self.navigationItem.titleView = _searchTF;
     
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, kScreen_width, kScreen_height-0) style:UITableViewStylePlain];
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+    [self.view addSubview:_tableView];
+    
+    UIView *footer = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreen_width, 1)];
+    [YanMethodManager lineViewWithFrame:CGRectMake(15, 0, kScreen_width, 0.5) superView:footer];
+    _tableView.tableFooterView = footer;
+    
 }
+
+#pragma mark UITableView代理
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 220;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *everyOrder = @"eveyrOrder";
+    EveryOrderTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:everyOrder];
+    if (!cell) {
+        cell = [[EveryOrderTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:everyOrder];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    return cell;
+}
+
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {

@@ -24,7 +24,7 @@
 @property (nonatomic, strong) UITableView *goodsTableView;
 @property (nonatomic, strong) NSMutableArray *sections;//大分类
 @property (nonatomic, strong) NSMutableArray *rows;//小分类
-@property (nonatomic, strong) NSMutableArray *showRowsArray;
+@property (nonatomic, strong) NSMutableArray *showRowsArray;//BOOL
 @property (nonatomic, strong) NSIndexPath *selectIndexPath;
 
 @end
