@@ -99,17 +99,29 @@
     deleBtn.tag = 501;
     [deleBtn addTarget:self action:@selector(goodsInfoBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [footer addSubview:deleBtn];
+    
+    UIButton *scanBtn = [ControlExtension buttonInitWithFrame:CGRectMake(deleBtn.left, deleBtn.bottom+15, deleBtn.width, deleBtn.height) title:@"继续扫描" style:UIButtonTypeSystem font:kFontSize_2 titleColor:[UIColor whiteColor]];
+    scanBtn.backgroundColor = kNaviBarColor;
+    scanBtn.layer.cornerRadius = 5;
+    scanBtn.layer.borderColor = kDividColor.CGColor;
+    scanBtn.layer.borderWidth = 0.5;
+    scanBtn.tag = 502;
+    [scanBtn addTarget:self action:@selector(goodsInfoBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+    [footer addSubview:scanBtn];
+    
     _tableView.tableFooterView = footer;
 }
 
 -(void)goodsInfoBtnAction:(UIButton *)button
 {
+    _canEdit = NO;
     if (button.tag == 500) {//保存并上架
-        _canEdit = NO;
         UIButton *editBtn = (UIButton *)[self.navigationController.view viewWithTag:3000];
         [editBtn setTitle:@"编辑" forState:UIControlStateNormal];
         [_tableView reloadData];
-    } else {//下架
+    } else if(button.tag == 501) {//下架
+        
+    } else {//继续扫描
         
     }
 }

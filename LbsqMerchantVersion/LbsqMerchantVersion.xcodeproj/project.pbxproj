@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3F6C582E1B8C062C00F9D5FC /* EveryOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6C582D1B8C062C00F9D5FC /* EveryOrderViewController.m */; };
 		3F6C58311B8C068200F9D5FC /* EveryOrderTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6C58301B8C068200F9D5FC /* EveryOrderTableViewCell.m */; };
+		3F6C58401B8C852500F9D5FC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6C583F1B8C852500F9D5FC /* LoginViewController.m */; };
+		3F6C58431B8C85E700F9D5FC /* LoginCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6C58421B8C85E700F9D5FC /* LoginCell.m */; };
 		3F75DC7A1B86BC3F0021E770 /* PraiseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F75DC791B86BC3F0021E770 /* PraiseViewController.m */; };
 		3F75DC7D1B86C23D0021E770 /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F75DC7C1B86C23D0021E770 /* OrderViewController.m */; };
 		3F75DC801B86F1A10021E770 /* PraiseSingleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F75DC7F1B86F1A10021E770 /* PraiseSingleViewController.m */; };
@@ -129,6 +131,10 @@
 		3F6C582D1B8C062C00F9D5FC /* EveryOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EveryOrderViewController.m; sourceTree = "<group>"; };
 		3F6C582F1B8C068200F9D5FC /* EveryOrderTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EveryOrderTableViewCell.h; sourceTree = "<group>"; };
 		3F6C58301B8C068200F9D5FC /* EveryOrderTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EveryOrderTableViewCell.m; sourceTree = "<group>"; };
+		3F6C583E1B8C852500F9D5FC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		3F6C583F1B8C852500F9D5FC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		3F6C58411B8C85E700F9D5FC /* LoginCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginCell.h; sourceTree = "<group>"; };
+		3F6C58421B8C85E700F9D5FC /* LoginCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginCell.m; sourceTree = "<group>"; };
 		3F75DC781B86BC3F0021E770 /* PraiseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PraiseViewController.h; sourceTree = "<group>"; };
 		3F75DC791B86BC3F0021E770 /* PraiseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PraiseViewController.m; sourceTree = "<group>"; };
 		3F75DC7B1B86C23D0021E770 /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
@@ -670,6 +676,10 @@
 				3FA0BF1F1B830DFC00FD42A0 /* ScanViewController.m */,
 				3FED752C1B84328500DD53B9 /* OrderStatistics */,
 				3F8BE1B51B840D59004F7BD4 /* homeViews */,
+				3F6C583E1B8C852500F9D5FC /* LoginViewController.h */,
+				3F6C583F1B8C852500F9D5FC /* LoginViewController.m */,
+				3F6C58411B8C85E700F9D5FC /* LoginCell.h */,
+				3F6C58421B8C85E700F9D5FC /* LoginCell.m */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -955,6 +965,7 @@
 				3FA0BEFD1B83010F00FD42A0 /* AFURLRequestSerialization.m in Sources */,
 				3FA0BE991B8300AC00FD42A0 /* SDWebImageCompat.m in Sources */,
 				3F6C582E1B8C062C00F9D5FC /* EveryOrderViewController.m in Sources */,
+				3F6C58431B8C85E700F9D5FC /* LoginCell.m in Sources */,
 				3F8C32371B8814AA00F0FA53 /* GoodsInfoTableViewCell.m in Sources */,
 				3FA0BEA01B8300AC00FD42A0 /* UIImage+GIF.m in Sources */,
 				3FD49D1D1B85CB5500A65E65 /* RetrievePasswordViewController.m in Sources */,
@@ -990,6 +1001,7 @@
 				3FA0BEA41B8300AC00FD42A0 /* UIImageView+WebCache.m in Sources */,
 				3FA0BF001B83010F00FD42A0 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				3FA0BE9B1B8300AC00FD42A0 /* SDWebImageDownloader.m in Sources */,
+				3F6C58401B8C852500F9D5FC /* LoginViewController.m in Sources */,
 				3FA0BEA91B8300B300FD42A0 /* Toast+UIView.m in Sources */,
 				3FA0BEF71B83010F00FD42A0 /* AFHTTPRequestOperation.m in Sources */,
 				3FA0BECA1B8300C800FD42A0 /* MJRefreshLegendFooter.m in Sources */,
@@ -1151,7 +1163,7 @@
 					"$(PROJECT_DIR)/LbsqMerchantVersion/thirdPart/ZBarSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c057a7f4-a830-4251-b7b2-4006cd5d373d";
+				PROVISIONING_PROFILE = "11ae08e6-1963-4e31-8f6b-e70fdeb261a3";
 			};
 			name = Debug;
 		};
@@ -1170,7 +1182,7 @@
 					"$(PROJECT_DIR)/LbsqMerchantVersion/thirdPart/ZBarSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c057a7f4-a830-4251-b7b2-4006cd5d373d";
+				PROVISIONING_PROFILE = "11ae08e6-1963-4e31-8f6b-e70fdeb261a3";
 			};
 			name = Release;
 		};
