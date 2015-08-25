@@ -13,6 +13,7 @@ typedef void(^TapBlock)(void);
 @interface GoodsHeaderView : UIView
 
 @property (nonatomic, copy) TapBlock tapActionBlock;
+@property (nonatomic, strong) UIImageView *imageV;
 
 -(id)initWithFrame:(CGRect)frame image:(UIImage *)image title:(NSString *)title;
 

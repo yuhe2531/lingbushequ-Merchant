@@ -20,20 +20,21 @@
     return self;
 }
 
-#define kImageV_widht 60
+#define kImageV_height 180
 
 -(void)createGoodsHeaderSubviewsWithImage:(UIImage *)image title:(NSString *)title
 {
-    UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 30, kImageV_widht, kImageV_widht)];
-    imageV.centerX = self.width/2;
-    imageV.image = image;
-    imageV.backgroundColor = KRandomColor;
-    imageV.userInteractionEnabled = YES;
+    _imageV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreen_width, kImageV_height)];
+    _imageV.centerX = self.width/2;
+    _imageV.image = image;
+    _imageV.backgroundColor = KRandomColor;
+    _imageV.userInteractionEnabled = YES;
+    _imageV.contentMode = UIViewContentModeScaleAspectFit;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapIconAction:)];
-    [imageV addGestureRecognizer:tap];
-    [self addSubview:imageV];
+    [_imageV addGestureRecognizer:tap];
+    [self addSubview:_imageV];
     
-    UILabel *titleL = [ControlExtension labelInitWithFrame:CGRectMake(0, imageV.bottom+5, self.width, 30) title:title font:kFontSize_2 textAlignment:NSTextAlignmentCenter];
+    UILabel *titleL = [ControlExtension labelInitWithFrame:CGRectMake(0, _imageV.bottom+5, self.width, 30) title:title font:kFontSize_2 textAlignment:NSTextAlignmentCenter];
     titleL.textColor = kBlack_Color_1;
     [self addSubview:titleL];
     

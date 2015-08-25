@@ -8,6 +8,7 @@
 
 #import "SearchResultViewController.h"
 #import "GoodsTableViewCell.h"
+#import "GoodsInfoViewController.h"
 
 @interface SearchResultViewController ()<UITextFieldDelegate>
 
@@ -88,6 +89,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    GoodsInfoViewController *infoVC = [[GoodsInfoViewController alloc] init];
+    [self.navigationController pushViewController:infoVC animated:YES];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField

@@ -8,6 +8,7 @@
 
 #import "OrderViewController.h"
 #import "OrderStatisticsTableViewCell.h"
+#import "EveryOrderViewController.h"
 
 @interface OrderViewController ()
 
@@ -28,9 +29,11 @@
 
 -(void)setStep:(NSInteger)step
 {
+    if (_step) {
+        return;
+    }
     _step = step;
     NSLog(@"=============== %ld",_step);
-
 }
 
 -(void)createOrderCSubviews
@@ -67,6 +70,16 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    EveryOrderViewController *orderVC = [[EveryOrderViewController alloc] init];
+    if (_step == 1) {
+        orderVC.naviTitle = @"每日订单";
+    } else if (_step == 2) {
+        orderVC.naviTitle = @"每周订单";
+    } else {
+        orderVC.naviTitle = @"每月订单";
+    }
+    [self.view.superview.viewController.navigationController pushViewController:orderVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

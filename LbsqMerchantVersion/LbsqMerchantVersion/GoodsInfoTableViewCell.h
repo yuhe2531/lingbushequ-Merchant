@@ -15,6 +15,8 @@ typedef void(^GoodsSwitchBlock)(UISwitch *);
 @property (nonatomic, strong) UITextField *contentTF;
 @property (nonatomic, assign) BOOL isPrice;
 @property (nonatomic, copy) GoodsSwitchBlock goodsSwitchBlock;
+@property (nonatomic, assign) BOOL canEdit;
+@property (nonatomic, strong) UISwitch *goodsSwitch;
 
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier title:(NSString *)title;
 
